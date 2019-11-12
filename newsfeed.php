@@ -72,9 +72,10 @@
                   <center><div style="margin-top: -4%;" class="video-wrapper">
                 <video class="post-video" controls> <source src="<?=$postDetCekV['path'] ?>" type="video/mp4"> </video>
               </div></center>
-            <?php } ?>
                   <div class="img-wrapper" data-toggle="modal" data-target=".photo-<?=$sayi;?>">
                     
+            <?php } ?>
+            
                     <img src="<?=$postDetailCek['path'] ?>" alt="photo" />
                   </div>
                   <div class="modal fade photo-<?=$sayi;?>" tabindex="-1" role="dialog" aria-hidden="true">
