@@ -65,14 +65,15 @@ label span input {
                   <div class="tools">
 <ul class="publishing-tools list-inline">
                <li><a ><label class="filebutton"><i class="ion-images"></i>
-<span><input type="file" id="myfile" name="myfile" onchange="loadFile(event)" multiple></span>
+<span><input type="file" id="myfile" name="myfile" onchange="loadFile(event)" accept="image/*" multiple></span>
 </label></a></li>
-<li><a ><label class="filebutton"><i class="ion-ios-videocam"></i><span><input type="file" id="myfile" onchange="loadFile(event)" name="myfile"></span>
+<li><a ><label class="filebutton"><i class="ion-ios-videocam"></i><span><input accept="video/*" type="file" id="myfile" onchange="loadFile(event)" name="myfile"></span>
 </label></a></li>
                     </ul>
                     <button onclick="post()" class="btn btn-primary pull-right">Paylaş</button>
                   </div>
                 </div>
+                <!--  -->
                  <script>
                   var a=0;
                   var dosyalar = new Array();
@@ -84,13 +85,19 @@ console.log(i);
 dosyalar.push(event.target.files[i]);
 var c= document.getElementById("resimler").innerHTML;
  //console.log(c);
-
+if (event.target.accept=="image/*") {
 var onizleme = document.getElementById('onizleme');
- c+=' <img id="onizleme'+a+'"  width="100" height="100" /><div id="progress-wrp"><div class="progress-bar"></div><div class="status">0%</div></div>';
+ c+=' <img id="onizleme'+a+'"  width="100" height="100" />';
  document.getElementById("resimler").innerHTML=c;
  //console.log(document.getElementById("resimler").innerHTML);
 document.getElementById("onizleme"+a).src = URL.createObjectURL(event.target.files[i]);
-
+} else {
+  var onizleme = document.getElementById('onizleme');
+ c+=' <img id="onizleme'+a+'"  width="100" height="100" />';
+ document.getElementById("resimler").innerHTML=c;
+ //console.log(document.getElementById("resimler").innerHTML);
+document.getElementById("onizleme"+a).src = "dimg/play.jpg";
+}
 a=a+1;
 }
 };
@@ -98,7 +105,7 @@ a=a+1;
 <div id="resimler">
        
       </div>
-
+<div id="load"> </div>
       
             	</div>
             </div>
@@ -115,7 +122,7 @@ a=a+1;
           url: "config/postText.php", 
           data : degerler,
           success: function(data) {
-          window.location.reload();
+          
          
           }
           });
@@ -125,9 +132,10 @@ a=a+1;
     function post()
 {
   
+
  // var myfile=document.getElementById("myfile").value;
   var text=document.getElementById("text").value;
-  
+  if (text!="" || dosyalar.length!="") {
   postt(text);
 for(var i=0;i<dosyalar.length;i++)
 {
@@ -135,9 +143,13 @@ for(var i=0;i<dosyalar.length;i++)
 	postPaylas(dosyalar[i]);
 	console.log(dosyalar[i]);
 }
-
   
-
+ 
+ document.getElementById("load").innerHTML='<div id="progress-wrp"><div class="progress-bar"></div><div class="status">0%</div></div>';
+ 
+} else {
+  alert("Boş Post");
+}
 }
 
 
@@ -164,6 +176,9 @@ Upload.prototype.doUpload = function () {
     formData.append("upload_file", true);
     console.log(this.file);
 //console.log(formData);
+abcd++;
+
+
     $.ajax({
         type: "POST",
         url: "config/post.php",
@@ -171,7 +186,10 @@ Upload.prototype.doUpload = function () {
         xhr: function () {
             var myXhr = $.ajaxSettings.xhr();
             if (myXhr.upload) {
+              if(abcd==dosyalar.length)
+              {
                 myXhr.upload.addEventListener('progress', that.progressHandling, false);
+              }
             }
             return myXhr;
         },
@@ -203,7 +221,12 @@ Upload.prototype.progressHandling = function (event) {
     // update progressbars classes so it fits your code
     $(progress_bar_id + " .progress-bar").css("width", +percent + "%");
     $(progress_bar_id + " .status").text(percent + "%");
-    window.location.reload();
+
+     if (percent==100) {
+      
+      window.location.reload();
+    }
+    
 };
 
 $(document).ready(function(){
@@ -222,5 +245,5 @@ postPaylas = function (e)
 });
 
 
-
+var abcd=0;
 </script> 

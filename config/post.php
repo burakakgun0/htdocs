@@ -23,12 +23,13 @@ if (isset($_POST)) {
     @move_uploaded_file($tmp_name, "$uploads_dir/$benzersizad$name");
 
 			
-			
+			$format=explode('.',$refimgyol);
+			$formatt=$format[1];
 		
 			$sel=$db->query("SELECT * FROM `post` WHERE user_id='$id' order by id DESC limit 1");
 			$selectt=$sel->fetch(PDO::FETCH_ASSOC);
 			$postId=$selectt['id'];
-			$ins=$db->query("INSERT INTO `post_detail`( `post_id`, `path`) VALUES ('$postId','$refimgyol')");
+			$ins=$db->query("INSERT INTO `post_detail`( `post_id`, `path`,`mime`) VALUES ('$postId','$refimgyol','$formatt')");
 
 
 }
