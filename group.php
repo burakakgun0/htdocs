@@ -14,7 +14,9 @@
           ================================================= -->
     		<?php include 'userside.php'; ?>
     			<div class="col-md-7">
-
+            <div class="create-post">
+              <h4 class="grey">Gruplar<a href=""><div  class="pull-right"><span class="label label-primary">Yeni Grup Kur</span></div></a></h4>
+            </div>
             <!-- Post Create Box
             ================================================= -->
             <!-- Friend List

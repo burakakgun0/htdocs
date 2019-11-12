@@ -23,7 +23,7 @@ $userId=$_SESSION['id'];
 
         
             <div class="create-post">
-            	<h4 class="grey">Mesajlar</h4>
+            	<h4 class="grey">Mesajlar<a href=""><div  class="pull-right"><span class="label label-primary">Mesaj At</span></div></a></h4>
             </div>
 
             <!-- Chat Room

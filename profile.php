@@ -37,9 +37,8 @@ if ($_GET['username'] && @$_GET['page']) {  $current='about'; }
               $sql=$db->query("SELECT * FROM `post` WHERE user_id='$USid' order by id DESC");
                 $rand=rand();   while($postcek=$sql->fetch(PDO::FETCH_ASSOC)) { $rand++
             ?>
-            <div class="post-content">
-              <!--Post Date-->
-                <div class="post-date hidden-xs hidden-sm">
+            <div style="margin-top: -3%" class="post-content">
+              <div class="post-date hidden-xs hidden-sm">
                   <h5><?php $postUs=$postcek['user_id']; 
                             $postUser=$db->query("SELECT * FROM `user` WHERE id='$postUs'");
                             $postUserCek=$postUser->fetch(PDO::FETCH_ASSOC);
@@ -80,8 +79,8 @@ elseif ($saniye<=59 && $saniye>=0) {
 echo "Az Önce";
 }
 ?></p>
-                </div><!--Post Date End-->
-             <?php 
+                </div>
+              <?php 
               $POSTID=$postcek['id'];
               $postDetail=$db->query("SELECT * FROM `post_detail` WHERE post_id='$POSTID' order by id DESC");
               $postDetSay=$postDetail->rowCount();
@@ -91,7 +90,7 @@ echo "Az Önce";
                ?>
                <?php if ($postDetSay>0) {  $postDetailCek=$postDetail->fetch(PDO::FETCH_ASSOC);  ?>
                 <?php if($postDetSay==1) { ?>
-                 
+                 <?php if ($postDetailCek['mime']=='jpeg' || $postDetailCek['mime']=='jpg') { ?>
               <li>
                   <div style="margin-top: -4%; background-color: #6d6e71" class="img-wrapper" data-toggle="modal" data-target=".photo-<?=$rand;?>">
                     <center><img style="max-width: 100% !important;" src="<?=$postDetailCek['path'] ?>" alt="photo" /></center>
@@ -104,19 +103,44 @@ echo "Az Önce";
                     </div>
                   </div>
                 </li>
-              
+              <?php } else { ?>
+                <li>
+                  
+                    <center><div style="margin-top: -4%;" class="video-wrapper">
+                <video class="post-video" controls> <source src="<?=$postDetailCek['path'] ?>" type="video/mp4"> </video>
+              </div></center>
+                  
+                  
+                </li>
+              <?php } ?>
                <?php } else { ?>
 
                 <ul class="album-photos">
-                  <?php $sayi=rand(); while($postDetailCek=$postDetail->fetch(PDO::FETCH_ASSOC)){ $sayi++ ?>
+
+                  <?php $sayi=rand(); $sayi2=rand(); 
+                  $postDetail2=$db->query("SELECT * FROM `post_detail` WHERE post_id='$POSTID' order by id DESC");
+                  while($postDetailCek2=$postDetail2->fetch(PDO::FETCH_ASSOC)){ $sayi++; $sayi2++?>
+                  
+                 
                 <li>
-                  <div class="img-wrapper" data-toggle="modal" data-target=".photo-<?=$sayi;?>">
-                    <img src="<?=$postDetailCek['path'] ?>" alt="photo" />
+                  <div  class="img-wrapper" data-toggle="modal" data-target=".photo-<?=$sayi;?>">
+                     <?php if ($postDetailCek2['mime']=="mp4") { ?>
+                       <img src="dimg/play.jpg" alt="photo" />
+                     <?php } else {?> 
+                      <img src="<?=$postDetailCek2['path'] ?>" alt="photo" />
+                     <?php } ?>
+                    
                   </div>
                   <div class="modal fade photo-<?=$sayi;?>" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
                       <div class="modal-content">
-                        <img src="<?=$postDetailCek['path'] ?>" alt="photo" />
+                         <?php if ($postDetailCek2['mime']=="mp4") { ?>
+                        <center><div  class="video-wrapper">
+                <video class="post-video" controls> <source src="<?=$postDetailCek2['path'] ?>" type="video/mp4"> </video>
+              </div></center>
+                        <?php } else {?> 
+                        <img src="<?=$postDetailCek2['path'] ?>" alt="photo" />
+                        <?php } ?>
                       </div>
                     </div>
                   </div>
@@ -128,11 +152,18 @@ echo "Az Önce";
                 <img src="images/users/user-5.jpg" alt="user" class="profile-photo-md pull-left" />
                 <div class="post-detail">
                   <div class="user-info">
-                    <h5><a href="timeline.html" class="profile-link">
-                      <?=$postUserCek['name'].' '.$postUserCek['surname']; ?>
+                    <?php $postUs=$postcek['user_id']; 
+                            $postUser=$db->query("SELECT * FROM `user` WHERE id='$postUs'");
+                            $postUserCek=$postUser->fetch(PDO::FETCH_ASSOC);
+                            ?>
+                    <h5><a href="<?=$postUserCek['username']; ?>" class="profile-link">
+                      <?php
+                            echo $postUserCek['name'].' '.$postUserCek['surname'];
+                      ?>
                     </a> <span class="following">Seni Takip Ediyor</span></h5>
-                    <p class="text-muted">
-<?php if ($yil>=1) {
+                    <p class="text-muted"><?php
+
+if ($yil>=1) {
 echo round($yil)." Yıl Önce";
 }elseif ($ay>=1) {
 echo round($ay)." Ay Önce";
@@ -147,7 +178,8 @@ echo round($dakika)." Dakika Önce";
 }
 elseif ($saniye<=59 && $saniye>=0) {
 echo "Az Önce";
-}?></p>
+}
+?></p>
                   </div>
                   <div  class="reaction">
                     <div style="float: left;" id="like<?=$postcek['id'];?>">
@@ -187,7 +219,7 @@ echo "Az Önce";
                   <div class="post-text">
                     <p>
                       <?=$postcek['message'] ?>
-                    <i class="em em-anguished"></i> <i class="em em-anguished"></i> <i class="em em-anguished"></i></p>
+                    
                   </div>
                   <div class="line-divider"></div>
                   <div id="yorumlar<?=$postcek['id']?>">
@@ -209,7 +241,7 @@ echo "Az Önce";
                 <?php } ?>
                   
                 </div>
-                <form class="form" action="" method="" onsubmit="return false">
+               <form class="form" action="" method="" onsubmit="return false">
                   <div style="width: 70%"  class="post-comment">
                     <img src="images/users/user-1.jpg" alt="" class="profile-photo-sm" />
                     <input id="message<?=$postcek['id']?>" name="comment"  type="text" class="form-control" placeholder="Yorum Yap">

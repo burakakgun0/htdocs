@@ -16,10 +16,10 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right main-menu">
-              <li class="dropdown"><a href="newsfeed.php">Anasayfa</a></li>
+              <li class="dropdown"><a href="newsfeed">Anasayfa</a></li>
                
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bildirimler <span><img src="../images/down-arrow.png" alt="" /></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><div  class="pull-right"><span class="label label-danger">1</span></div> Bildirimler &nbsp;<span></span></a>
                 <ul class="dropdown-menu login">
                  <li><a><p>asdkasjdlk</p></a>
 <a><p>asdkasjdlk</p></a><a><p>asdkasjdlk</p></a><a><p>asdkasjdlkasdasdasdasdasdasd</p></a><a><p>asdkasjdlk</p></a><a><p>asdkasjdlk</p></a>
@@ -32,21 +32,8 @@
 
 
               </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mesajlar <span><img src="../images/down-arrow.png" alt="" /></span></a>
-                <ul class="dropdown-menu login">
-                 <li><a><p>asdkasjdlk</p></a>
-<a><p>asdkasjdlk</p></a><a><p>asdkasjdlk</p></a><a><p>asdkasjdlkasdasdasdasdasdasd</p></a><a><p>asdkasjdlk</p></a><a><p>asdkasjdlk</p></a>
-
-
-
-                 </li>
-
-                </ul>
-
-
-              </li>
-              <li class="dropdown"><a href="group.php">Gruplar</a></li>
+              <li class="dropdown"><a href="messages">Mesajlar &nbsp;<div  class="pull-right"><span class="label label-danger">1</span></div></a></li>
+              <li class="dropdown"><a href="group">Gruplar</a></li>
 
               <li class="dropdown"><a href="<?=$sesCek['username'] ?>"><img style="width: 30px; height: 30px; float: left; margin-right: 5px;" src="../images/users/user-2.jpg" alt="user" class="img-responsive profile-photo">  <?=$sesCek['name'] ?></a></li>
               
