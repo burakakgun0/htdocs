@@ -1,0 +1,42 @@
+RewriteEngine on
+
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_FILENAME}\.php -f
+
+RewriteRule ^(.*)$ $1.php
+
+
+
+RewriteRule ^([\w-]+)/?$ profile.php?username=$1 [L,QSA]
+
+RewriteRule ^([\w-]+)/(about)/?$ profile.php?username=$1&page=$2 [L,QSA]
+
+RewriteRule ^([\w-]+)/(settings)?$ editprofile.php?username=$1 [L,QSA]
+
+RewriteRule ^([\w-]+)/(settings/work)?$ editwork.php?username=$1 [L,QSA]
+
+RewriteRule ^([\w-]+)/(settings/interest)?$ editinterest.php?username=$1 [L,QSA]
+
+RewriteRule ^([\w-]+)/(settings/account)?$ editsettings.php?username=$1 [L,QSA]
+
+RewriteRule ^([\w-]+)/(settings/password)?$ editpass.php?username=$1 [L,QSA]
+
+#Rewriterule ^/(.*) profile.php?username=$1 [L,QSA]
+
+Rewriterule ^s/(.*) postdetail.php?id=$1 [L,QSA]
+
+
+
+<IfModule mod_security.c> 
+
+  SecFilterEngine Off 
+
+  SecFilterScanPOST On
+
+</IfModule>
+
+
+
