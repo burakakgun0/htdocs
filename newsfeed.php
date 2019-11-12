@@ -1,5 +1,5 @@
 <?php include 'head.php' ?>
-  <body>a
+  <body>
 
     <!-- Header
     ================================================= -->
@@ -62,22 +62,32 @@
                <?php } else { ?>
 
                 <ul class="album-photos">
+
                   <?php $sayi=rand(); while($postDetailCek=$postDetail->fetch(PDO::FETCH_ASSOC)){ $sayi++ ?>
-                <li>
-                  
-                  
-             
-                  <div class="img-wrapper" data-toggle="modal" data-target=".photo-<?=$sayi;?>">
-                    
-            <?php 
+                    <?php 
                   $postDetailV=$db->query("SELECT * FROM `post_detail` WHERE post_id='$POSTID' order by id DESC");
                   $postDetSayV=$postDetailV->rowCount();
                   $postDetCekV=$postDetailV->fetch(PDO::FETCH_ASSOC);
                   if ($postDetSayV>0) { ?>
-                     <img src="dimg/play.jpg" alt="photo" />
-                 <?php } else { ?>
+                    <li>
+                  <div class="img-wrapper" data-toggle="modal" data-target=".photo-<?=$sayi;?>">
+                    <img src="dimg/play.jpg" alt="photo" />
+                  </div>
+                  <div class="modal fade photo-<?=$sayi;?>" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <center><div style="margin-top: -4%;" class="video-wrapper">
+                <video class="post-video" controls> <source src="<?=$postDetCekV['path'] ?>" type="video/mp4"> </video>
+              </div></center>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                     
+                 <?php }  ?>
+                <li>
+                  <div class="img-wrapper" data-toggle="modal" data-target=".photo-<?=$sayi;?>">
                     <img src="<?=$postDetailCek['path'] ?>" alt="photo" />
-                  <?php } ?>
                   </div>
                   <div class="modal fade photo-<?=$sayi;?>" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
