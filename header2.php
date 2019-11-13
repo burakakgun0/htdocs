@@ -60,7 +60,7 @@
 													var degerler="";
                                                                 $.ajax({
                                                                 type: "POST", 
-                                                                url: "config/mesajVeBildirimSayıCek.php", 
+                                                                url: "config/mesajVeBildirimSayiCek.php", 
                                                                 data : degerler,																
                                                                 success:function(data){
 																
