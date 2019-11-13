@@ -24,6 +24,20 @@ session_start();
 	            	$sql="INSERT INTO `post_likes`(`user_id`, `post_id`) VALUES ('$usId','$postId')";
 
             		$yorumat=$db->query($sql);
+					
+					 $sqlc = "SELECT * FROM `post` WHERE id='$id'";
+					$pos=$db->query($sqlc);
+					$posCek=$pos->fetch(PDO::FETCH_ASSOC);
+					$posUserId=$posCek['user_id'];
+	      
+					
+					
+					
+	            	$sqll="INSERT INTO `notification`(`olusturan_user_id`,`etkilenen_user_id`,`message`,`post_id`) VALUES ('$usId','$posUserId','Paylaşımınızı Beğendi','$postId')";
+
+
+	            	$bildirimOlustur=$db->query($sqll);
+					
 
 	            }
 

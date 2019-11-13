@@ -9,9 +9,24 @@ $usId=$_SESSION['id'];
 $yorum=$_POST['comment'];
 $id=$_POST['id'];
 
+$mesaj= "Yorum Attı   " . $yorum;
+
+				
+            $sqlc = "SELECT * FROM `post` WHERE id='$id'";
+	            $pos=$db->query($sqlc);
+	            $posCek=$pos->fetch(PDO::FETCH_ASSOC);
+	            $posUserId=$posCek['user_id'];
+	      
 
 
-            $sql="INSERT INTO `post_comments`(`user_id`, `comment`, `post_id`) VALUES ('$usId','$yorum','$id')";
+				$sql="INSERT INTO `post_comments`(`user_id`, `comment`, `post_id`) VALUES ('$usId','$yorum','$id')";
+			
+					
+	            	$sqll="INSERT INTO `notification`(`olusturan_user_id`,`etkilenen_user_id`,`message`,`post_id`) VALUES ('$usId','$posUserId','$mesaj','$id')";
+
+
+	            	$bildirimOlustur=$db->query($sqll);
+					
 
             $yorumat=$db->query($sql);
 

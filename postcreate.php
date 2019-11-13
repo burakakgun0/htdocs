@@ -120,10 +120,11 @@ a=a+1;
           $.ajax({
           type: "POST", 
           url: "config/postText.php", 
+
           data : degerler,
           success: function(data) {
           
-         
+			 window.location.reload();
           }
           });
           }
@@ -186,6 +187,7 @@ abcd++;
         xhr: function () {
             var myXhr = $.ajaxSettings.xhr();
             if (myXhr.upload) {
+			
               if(abcd==dosyalar.length)
               {
                 myXhr.upload.addEventListener('progress', that.progressHandling, false);
