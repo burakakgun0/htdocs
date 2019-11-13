@@ -18,8 +18,8 @@
             <ul class="nav navbar-nav navbar-right main-menu">
               <li class="dropdown"><a href="newsfeed">Anasayfa</a></li>
                
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><div  class="pull-right"><span  id="bildirimler" class="label label-danger">1</span></div> Bildirimler &nbsp;<span></span></a>
+   <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><div  class="pull-right"><span class="label label-danger">1</span></div> Bildirimler &nbsp;<span></span></a>
                 <ul class="dropdown-menu login">
                  <li><a><p>asdkasjdlk</p></a>
 <a><p>asdkasjdlk</p></a><a><p>asdkasjdlk</p></a><a><p>asdkasjdlkasdasdasdasdasdasd</p></a><a><p>asdkasjdlk</p></a><a><p>asdkasjdlk</p></a>
@@ -32,7 +32,7 @@
 
 
               </li>
-              <li class="dropdown"><a href="messages">Mesajlar &nbsp;<div  class="pull-right"><span  id="mesaj" class="label label-danger">1</span></div></a></li>
+              <li class="dropdown"><a href="messages">Mesajlar &nbsp;<div  id="mesaj"  class="pull-right"><span  class="label label-danger">1</span></div></a></li>
               <li class="dropdown"><a href="group">Gruplar</a></li>
 
               <li class="dropdown"><a href="<?=$sesCek['username'] ?>"><img style="width: 30px; height: 30px; float: left; margin-right: 5px;" src="../images/users/user-2.jpg" alt="user" class="img-responsive profile-photo">  <?=$sesCek['name'] ?></a></li>
@@ -51,6 +51,7 @@
     </header>
 	
 		<script>
+		
 	  $(document).ready(function(){
                                                 mesajGetir = function ()
                                                 {
@@ -67,8 +68,8 @@
 																				console.log(abc);																
 																	msg=abc[0].mesaj;
 																		bild=abc[0].bildirim;
-																		$("#bildirimler").html(bild);
-																		$("#mesaj").html(msg);
+																		//$("#bildirimler").html(bild);
+																		//$("#mesaj").html(msg);
 																
 															
                                                             }
@@ -80,25 +81,7 @@
 												  
                                              });
 	
-	
-	
 
-
-
-	
-
-	
-	function bildirimVeMesajSayıÇek(id)
-	{
-		
-		var a =document.getElementById("to"+id).value;
-		var s =mesajCek(id,a);
-		var s =mesajGetir(id);
-			updateScroll();
-
-	}
-	
-	
 	window.onload = function(){ 
    
 	mesajGetir();
@@ -106,15 +89,10 @@
 }
 
 	
-	
-	setInterval(function(){ baslikCek() }, 30000);
+
 	
 	</script>
 
     <!-- Scripts
     ================================================= -->
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.sticky-kit.min.js"></script>
-    <script src="js/jquery.scrollbar.min.js"></script>
-    <script src="js/script.js"></script>
+
