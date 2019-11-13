@@ -19,11 +19,10 @@
               <li class="dropdown"><a href="newsfeed">Anasayfa</a></li>
                
    <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><div  class="pull-right"><span class="label label-danger">1</span></div> Bildirimler &nbsp;<span></span></a>
-                <ul class="dropdown-menu login">
-                 <li><a><p>asdkasjdlk</p></a>
-<a><p>asdkasjdlk</p></a><a><p>asdkasjdlk</p></a><a><p>asdkasjdlkasdasdasdasdasdasd</p></a><a><p>asdkasjdlk</p></a><a><p>asdkasjdlk</p></a>
-
+                <a href="#" class="dropdown-toggle" onClick="bildirimCe()" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><div  class="pull-right"><span id="bildirimler" class="label label-danger">1</span></div> Bildirimler &nbsp;<span></span></a>
+                <ul  class="dropdown-menu login">
+                 <li id="bildirimDrop">
+			
 
 
                  </li>
@@ -32,7 +31,7 @@
 
 
               </li>
-              <li class="dropdown"><a href="messages">Mesajlar &nbsp;<div  id="mesaj"  class="pull-right"><span  class="label label-danger">1</span></div></a></li>
+              <li class="dropdown"><a href="messages">Mesajlar &nbsp;<div   class="pull-right"><span id="mesaj"  class="label label-danger">1</span></div></a></li>
               <li class="dropdown"><a href="group">Gruplar</a></li>
 
               <li class="dropdown"><a href="<?=$sesCek['username'] ?>"><img style="width: 30px; height: 30px; float: left; margin-right: 5px;" src="../images/users/user-2.jpg" alt="user" class="img-responsive profile-photo">  <?=$sesCek['name'] ?></a></li>
@@ -68,10 +67,41 @@
 																				console.log(abc);																
 																	msg=abc[0].mesaj;
 																		bild=abc[0].bildirim;
-																		//$("#bildirimler").html(bild);
-																		//$("#mesaj").html(msg);
+																		$("#bildirimler").html(bild);
+																		$("#mesaj").html(msg);
+                                                            }
+
+                                                        });
+	
+                                                }
+												          bildirimCek = function ()
+                                                {
+													var msg="";
+													var bild="";
+													var degerler="";
+													var czx="";
+                                                                $.ajax({
+                                                                type: "POST", 
+                                                                url: "config/bildirimCek.php", 
+                                                                data : degerler,																
+                                                                success:function(data){
 																
-															
+																	abc = JSON.parse(data);
+																	console.log(abc);																
+																	for(var i=0;i<abc.length;i++)
+																	{
+																		
+																		
+																	
+																	czx+='<a><p>'+abc[i].name +'  '+abc[i].surname+ '  '+abc[i].message+'</p></a>';			
+																		
+																		
+																		
+																		
+																	}
+																	
+																		$("#bildirimDrop").html(czx);
+																		//$("#mesaj").html();
                                                             }
 
                                                         });
@@ -86,6 +116,11 @@
    
 	mesajGetir();
 
+}
+function bildirimCe()
+{
+	bildirimCek();
+	
 }
 
 	
