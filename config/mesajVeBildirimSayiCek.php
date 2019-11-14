@@ -15,7 +15,7 @@ $asd=array();
 				
 				
 				
-				$sqla = "SELECT * FROM `dm` WHERE `chat_usertwo_id`='$id' and 'okundumu'=0";
+				$sqla = "SELECT * FROM `dm` WHERE `chat_usertwo_id`='$id' and okundumu=0";
 	            $poss=$db->query($sqla);
 	            $posCekk=$poss->fetch(PDO::FETCH_ASSOC);
 				$mesajSayi=$poss->rowCount();

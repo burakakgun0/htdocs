@@ -52,7 +52,7 @@
 		<script>
 		
 	  $(document).ready(function(){
-                                                mesajGetir = function ()
+                                                headermesajGetir = function ()
                                                 {
 													var msg="";
 													var bild="";
@@ -112,9 +112,9 @@
                                              });
 	
 
-	window.onload = function(){ 
+	window.onload = function(){ 	
    
-	mesajGetir();
+	headermesajGetir();
 
 }
 function bildirimCe()
