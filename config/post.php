@@ -25,6 +25,10 @@ if (isset($_POST)) {
 			
 			$format=explode('.',$refimgyol);
 			$formatt=$format[1];
+
+			if ($formatt=='png' || $formatt=='jpg' || $formatt=='bmp') {
+				$formatt='jpeg';
+			}
 		
 			$sel=$db->query("SELECT * FROM `post` WHERE user_id='$id' order by id DESC limit 1");
 			$selectt=$sel->fetch(PDO::FETCH_ASSOC);

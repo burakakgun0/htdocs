@@ -22,7 +22,9 @@
 
             <!-- Post Content
             ================================================= -->
-            <?php $sql=$db->query("SELECT * FROM `post` order by id DESC");
+            <?php 
+          
+            $sql=$db->query("SELECT * FROM `post` order by id DESC");
              $rand=rand();     while($postcek=$sql->fetch(PDO::FETCH_ASSOC)) { $rand++
             ?>
             <div class="post-content">
@@ -106,7 +108,13 @@
                       <?php
                             echo $postUserCek['name'].' '.$postUserCek['surname'];
                       ?>
-                    </a> <span class="following">Seni Takip Ediyor</span></h5>
+                    </a> <?php if($postcek['group_id']!=NULL) {
+                    	$grID=$postcek['group_id'];
+                    	$grp=$db->query("SELECT * FROM `facegroup` WHERE id='$grID'");
+                    	$grpCek=$grp->fetch(PDO::FETCH_ASSOC); ?>
+                    	<a href="<?=$grpCek['seo']; ?>/group"><span class="following"> <?php echo '<'.' '.$grpCek['name']; ?> </span></a>
+                    <?php } ?>
+                </h5>
                     <p class="text-muted"><?php
 date_default_timezone_set('Europe/Istanbul');
 $tarih=explode(" ",$postcek['create_time']);//bu ilk kayıt tarihi olsun

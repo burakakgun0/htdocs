@@ -1,7 +1,7 @@
 <?php include 'head.php'; 
 
 if (!isset($_GET['page'])) {  $current='tunel'; }
-if ($_GET['username'] && @$_GET['page']) {  $current='about'; }
+if ($_GET['group'] && @$_GET['page']) {  $current='about'; }
 
 ?>
   <body>
@@ -16,7 +16,7 @@ if ($_GET['username'] && @$_GET['page']) {  $current='about'; }
       <!-- Timeline
       ================================================= -->
       <div class="timeline">
-        <?php include 'timelinecover.php'; ?>
+        <?php include 'grouptimelinecover.php'; ?>
         <div id="page-contents">
           <div class="row">
             <div class="col-md-3"></div>
@@ -24,17 +24,17 @@ if ($_GET['username'] && @$_GET['page']) {  $current='about'; }
 
               <!-- Post Create Box
               ================================================= -->
-              <?php include 'postcreate.php' ?><!-- Post Create Box End-->
+              <?php include 'grouppostcreate.php' ?><!-- Post Create Box End-->
 
               <?php if (!isset($_GET['page'])) {  ?>
               
               <!-- Post Content
               ================================================= -->
                <?php 
-              $US=$db->query("SELECT * FROM `user` WHERE username='$usNM'");
+              $US=$db->query("SELECT * FROM `facegroup` WHERE seo='$groupNM'");
               $USCEK=$US->fetch(PDO::FETCH_ASSOC);
               $USid=$USCEK['id'];
-              $sql=$db->query("SELECT * FROM `post` WHERE user_id='$USid' order by id DESC");
+              $sql=$db->query("SELECT * FROM `post` WHERE group_id='$USid' order by id DESC");
                 $rand=rand();   while($postcek=$sql->fetch(PDO::FETCH_ASSOC)) { $rand++
             ?>
             <div style="margin-top: -3%" class="post-content">
@@ -160,12 +160,7 @@ echo "Az Önce";
                       <?php
                             echo $postUserCek['name'].' '.$postUserCek['surname'];
                       ?>
-                    </a> <?php if($postcek['group_id']!=NULL) {
-                      $grID=$postcek['group_id'];
-                      $grp=$db->query("SELECT * FROM `facegroup` WHERE id='$grID'");
-                      $grpCek=$grp->fetch(PDO::FETCH_ASSOC); ?>
-                      <a href="<?=$grpCek['seo']; ?>/group"><span class="following"> <?php echo '<'.' '.$grpCek['name']; ?> </span></a>
-                    <?php } ?></h5>
+                    </a> <!--<span class="following">Seni Takip Ediyor</span>--></h5>
                     <p class="text-muted"><?php
 
 if ($yil>=1) {
@@ -262,7 +257,7 @@ echo "Az Önce";
           <?php } ?>
 
               <?php } ?>
-              <?php if ($_GET['username'] && @$_GET['page']) { ?>
+              <?php if ($_GET['group'] && @$_GET['page']) { ?>
               <!-- About
               ================================================= -->
               <div class="about-profile">

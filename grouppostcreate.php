@@ -68,9 +68,9 @@ label span input {
 <span><input type="file" id="myfile" name="myfile" onchange="loadFile(event)" accept="image/*" multiple></span>
 </label></a></li>
 <li><a ><label class="filebutton"><i class="ion-ios-videocam"></i><span><input accept="video/*" type="file" id="myfile" onchange="loadFile(event)" name="myfile"></span>
-</label></a></li>
+</label></a></li> 
                     </ul>
-                    <button onclick="post()" class="btn btn-primary pull-right">Paylaş</button>
+                    <button onclick="post()" id="group" value="<?=$groupCek['id'] ?>" class="btn btn-primary pull-right">Paylaş</button>
                   </div>
                 </div>
                 <!--  -->
@@ -103,7 +103,7 @@ a=a+1;
 };
 </script>
 <div id="resimler">
-       
+      
       </div>
 <div id="load"> </div>
       
@@ -113,9 +113,9 @@ a=a+1;
 <script>
   
           $(document).ready(function(){
-          postt = function (text)
+          postt = function (text,group)
           {
-          var degerler ='&text='+text;
+          var degerler ='&text='+text+'&group='+group;
           console.log(degerler);
           $.ajax({
           type: "POST", 
@@ -124,7 +124,7 @@ a=a+1;
           data : degerler,
           success: function(data) {
           
-		
+			
           }
           });
           }
@@ -136,8 +136,10 @@ a=a+1;
 
  // var myfile=document.getElementById("myfile").value;
   var text=document.getElementById("text").value;
+  var group=document.getElementById("group").value;
+
   if (text!="" || dosyalar.length!="") {
-  postt(text);
+  postt(text,group);
 for(var i=0;i<dosyalar.length;i++)
 {
 
@@ -145,13 +147,11 @@ for(var i=0;i<dosyalar.length;i++)
 	console.log(dosyalar[i]);
 }
   
- 
  if (dosyalar.length>0) {
  document.getElementById("load").innerHTML='<div id="progress-wrp"><div class="progress-bar"></div><div class="status">0%</div></div>';
  } else {
   window.location.reload();
  }
- 
 } else {
   alert("Boş Post");
 }
