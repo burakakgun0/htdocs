@@ -26,7 +26,9 @@ RewriteRule ^([\w-]+)/(settings/password)?$ editpass.php?username=$1 [L,QSA]
 
 RewriteRule ^([\w-]+)/(group)/?$ groupdetail.php?group=$1 [L,QSA]
 
+RewriteRule ^([\w-]+)/(group/about)/?$ groupdetail.php?group=$1&page=$2 [L,QSA]
 
+RewriteRule ^([\w-]+)/(group/settings)/?$ editgroup.php?group=$1 [L,QSA]
 
 #Rewriterule ^/(.*) profile.php?username=$1 [L,QSA]
 

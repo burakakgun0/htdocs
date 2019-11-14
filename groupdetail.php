@@ -262,31 +262,28 @@ echo "Az Önce";
               ================================================= -->
               <div class="about-profile">
                 <div class="about-content-block">
-                  <h4 class="grey"><i class="ion-ios-information-outline icon-in-title"></i>Hakkında</h4>
-                  <p><?=$kulCek['profile_string']; ?></p>
+                  <h4 class="grey"><i class="ion-ios-information-outline icon-in-title"></i>Grup Açıklaması</h4>
+                  <p><?=$groupCek['description']; ?></p>
                 </div>
                 <div class="about-content-block">
-                  <h4 class="grey"><i class="ion-ios-briefcase-outline icon-in-title"></i>Çalıştığı Sektör</h4>
+                  <h4 class="grey"><i class="ion-ios-briefcase-outline icon-in-title"></i>Grup Üyeleri</h4>
                   <div class="organization">
                    
                     <div class="work-info">
-                      <h5><?=$kulCek['sirket']; ?></h5>
-                      <p><?=$kulCek['brans']; ?> - <span class="text-grey"><?=$kulCek['whatTime']; ?>'dan beri</span></p>
+                      <?php $grupId=$groupCek['id'];
+                          $groupUye=$db->query("SELECT * FROM `facegroup_users` WHERE group_id='$grupId'");
+                          while($groupUyeler=$groupUye->fetch(PDO::FETCH_ASSOC)){ 
+                            $userGroup=$groupUyeler['user_id'];
+                            $grupUye=$db->query("SELECT * FROM `user` WHERE id='$userGroup'");
+                            $grupUyeCek=$grupUye->fetch(PDO::FETCH_ASSOC);
+                            ?>
+                      <a href="<?=$grupUyeCek['username']; ?>"><img src="<?php if($grupUyeCek['path']==null) { echo 'dimg/defaultavatar.png'; } else { echo $grupUyeCek['path'];} ?>" alt="" class="profile-photo-md"></a>
+                          <?php } ?>
                     </div>
                   </div>
                  
                 </div>
-                <div class="about-content-block">
-                  <h4 class="grey"><i class="ion-ios-location-outline icon-in-title"></i>İl</h4>
-                  <p><?=$kulCek['sehir']; ?></p>
                 
-                </div>
-                <div class="about-content-block">
-                  <h4 class="grey"><i class="ion-ios-heart-outline icon-in-title"></i>İlgi Alanları</h4>
-                  <ul class="interests list-inline">
-                      <p><?=$kulCek['ilgiler']; ?></p>
-                  </ul>
-                </div>
                 
               </div>
             <?php } ?>

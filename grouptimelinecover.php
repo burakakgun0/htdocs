@@ -19,7 +19,7 @@ $groupCek=$group->fetch(PDO::FETCH_ASSOC);
               </div>
               <div class="col-md-9">
                 <ul class="list-inline profile-menu">
-                  <li><a href="<?=$groupCek['seo'];?>" <?php if(@$current=='tunel') { ?>class="active" <?php } ?>>Zaman Tüneli</a></li>
+                  <li><a href="<?=$groupCek['seo'];?>/group/" <?php if(@$current=='tunel') { ?>class="active" <?php } ?>>Zaman Tüneli</a></li>
                   <li><a href="<?=$groupCek['seo'];?>/group/about" <?php if(@$current=='about') { ?>class="active" <?php } ?>>Hakkında</a></li>
                 </ul>
                 <ul class="follow-me list-inline">
@@ -43,8 +43,8 @@ $groupCek=$group->fetch(PDO::FETCH_ASSOC);
             </div>
             <div class="mobile-menu">
               <ul class="list-inline">
-                  <li><a href="<?=$groupCek['seo'];?>" <?php if($current=='tunel') { ?> class="active" <?php } ?>>Zaman Tüneli</a></li>
-                  <li><a href="<?=$groupCek['seo'];?>/about" <?php if($current=='about') { ?> class="active" <?php } ?>>Hakkında</a></li>
+                  <li><a href="<?=$groupCek['seo'];?>/group/" <?php if($current=='tunel') { ?> class="active" <?php } ?>>Zaman Tüneli</a></li>
+                  <li><a href="<?=$groupCek['seo'];?>/group/about" <?php if($current=='about') { ?> class="active" <?php } ?>>Hakkında</a></li>
               </ul>
               <button class="btn-primary">Gruba Katıl</button>
             </div>
