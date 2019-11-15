@@ -5,7 +5,9 @@ include 'config.php'; include 'seo.php';
 
 
 
-		if (isset($_POST['name'])) {
+		if (isset($_POST['desc'])) {
+
+
 			
 			$id=$_POST['seo'];
 			$_SESSION['seo']=$id;

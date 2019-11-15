@@ -90,7 +90,10 @@
           data : degerler,
           success: function(data) {
           console.log(data);
-          if(data!="No")
+           if (data=='Var') {
+            alert("Bu isimde bir grup zaten var!");
+           }
+          if(data!="No" && data!="Var")
           {
           alert("Değişiklik başarılı");
            window.location.href = data+'/group';

@@ -15,6 +15,14 @@ $usId=$_SESSION['id'];
 		$path='images/users/groupavatardefault.jpg';
 		$bg_path='images/covers/1.jpg';
 		$seo=seo($_POST['name']);
+
+            $varmi=$db->query("SELECT * FROM `facegroup` WHERE name='$name'");
+            $varmii=$varmi->rowCount();
+            if ($varmii>0) {
+                  echo "Var";
+                  exit;
+            }
+
             $sql=$db->query("INSERT INTO `facegroup`(`name`, `description`, `path`, `bg_path`, `owner_user_id`, `seo`) VALUES ('$name','$description','$path','$bg_path','$usId','$seo')");
 
             $sel=$db->query("SELECT * FROM `facegroup` WHERE owner_user_id='$usId' order by id DESC limit 1");

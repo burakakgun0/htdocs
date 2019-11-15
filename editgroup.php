@@ -5,7 +5,59 @@
     ================================================= -->
 		<?php include 'header2.php'; ?>
     <!--Header End-->
+<style type="text/css">
+ label.filebutton {
+    width:15.75px;
+    height:22px;
+    overflow:hidden;
+    position:relative;
+   
+}
 
+label span input {
+    z-index: 999;
+    line-height: 0;
+    font-size: 50px;
+    position: absolute;
+    top: -2px;
+    left: -700px;
+    opacity: 0;
+    filter: alpha(opacity = 0);
+    -ms-filter: "alpha(opacity=0)";
+    cursor: pointer;
+    _cursor: hand;
+    margin: 0;
+
+    padding:0;
+}
+  #progress-wrp {
+  border: 1px solid #0099CC;
+  padding: 1px;
+  position: relative;
+  height: 30px;
+  border-radius: 3px;
+  margin: 10px;
+  text-align: left;
+  background: #fff;
+  box-shadow: inset 1px 3px 6px rgba(0, 0, 0, 0.12);
+}
+
+#progress-wrp .progress-bar {
+  height: 100%;
+  border-radius: 3px;
+  background-color: #f39ac7;
+  width: 0;
+  box-shadow: inset 1px 1px 10px rgba(0, 0, 0, 0.11);
+}
+
+#progress-wrp .status {
+  top: 3px;
+  left: 50%;
+  position: absolute;
+  display: inline-block;
+  color: #000000;
+}
+</style>
     <div class="container">
 
       <!-- Timeline
@@ -59,8 +111,10 @@
                         <input id="cover" class="form-control input-group-lg" onchange="loadFile2(event)" type="file"  title="Fotoğraf Seç" placeholder="from"  />
                       </div>
                     </div>
-                    
-                    
+                    <div id="resimler">
+       
+                    </div>
+                    <div id="load"> </div>
                    
                     <button onclick="groupChange()" class="btn btn-primary">Kaydet</button>
                 
@@ -129,13 +183,13 @@ var xx='<?=$groupCek['id']; ?>';
  
 
   
- /*
- if (dosyalar.length>0) {
+
+ if (dosyalar.length>0 || dosyalar2.length>0) {
  document.getElementById("load").innerHTML='<div id="progress-wrp"><div class="progress-bar"></div><div class="status">0%</div></div>';
  } else {
-  window.location.reload();
+     window.location.reload();
  }
- */
+
 
 }
 
@@ -217,7 +271,7 @@ abcd++;
             var myXhr = $.ajaxSettings.xhr();
             if (myXhr.upload) {
       
-              if(abcd==dosyalar.length)
+              if(abcd==dosyalar2.length)
               {
                 myXhr.upload.addEventListener('progress', that.progressHandling, false);
               }
