@@ -23,8 +23,8 @@ $groupCek=$group->fetch(PDO::FETCH_ASSOC);
                   <li><a href="<?=$groupCek['seo'];?>/group/about" <?php if(@$current=='about') { ?>class="active" <?php } ?>>Hakkında</a></li>
                 </ul>
                 <ul class="follow-me list-inline">
-                  <li>1,299 kişi takip ediyor</li>
-                  <li><button class="btn-primary">Takip Et</button></li>
+                  <!--<li>1,299 kişi takip ediyor</li>
+                  <li><button class="btn-primary">Takip Et</button></li>-->
                   <?php if ($groupCek['owner_user_id']==$sesCek['id']) { ?>
                    <li><a href="<?=$groupCek['seo'];?>/group/settings"> <button class="btn-primary">Grubu Düzenle</button></a></li>
                   <?php } ?>

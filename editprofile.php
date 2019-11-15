@@ -22,7 +22,8 @@
               	<li><i class="icon ion-ios-briefcase-outline"></i><a href="<?=$kulCek['username'];?>/settings/work">İş</a></li>
               	<li><i class="icon ion-ios-heart-outline"></i><a href="<?=$kulCek['username'];?>/settings/interest">İlgi Alanlarım</a></li>
                 <li><i class="icon ion-ios-settings"></i><a href="<?=$kulCek['username'];?>/settings/account">Hesap Ayarlarım</a></li>
-              	<li><i class="icon ion-ios-locked-outline"></i><a href="<?=$kulCek['username'];?>/settings/password">Şifremi Değiştir</a></li>
+              	<li><i class="icon ion-ios-locked-outline"></i><a href="<?=$kulCek['username'];?>/settings/photos">Profil & Kapak Fotoğrafım</a></li>
+                <li><i class="icon ion-ios-locked-outline"></i><a href="<?=$kulCek['username'];?>/settings/password">Şifremi Değiştir</a></li>
               </ul>
             </div>
             <div class="col-md-7">

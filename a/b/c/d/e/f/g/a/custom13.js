@@ -12,7 +12,7 @@ $(document).ready(function(){
           
           if(data=="Okey")
           {
-          alert("Değişiklik başarılı");
+          alert("DeÄŸiÅŸiklik baÅŸarÄ±lÄ±");
           }
           }
           });

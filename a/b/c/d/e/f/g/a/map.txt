@@ -14,3 +14,4 @@ custom13--editinterest
 custom14--editwork
 custom15--register
 custom16--index
+custom17--editphotos
