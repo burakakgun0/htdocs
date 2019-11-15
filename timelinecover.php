@@ -43,8 +43,8 @@ $kulCek=$kul->fetch(PDO::FETCH_ASSOC);
             </div>
             <div class="mobile-menu">
               <ul class="list-inline">
-                  <li><a href="<?=$kulCek['username'];?>" <?php if($current=='tunel') { ?>class="active" <?php } ?>>Zaman Tüneli</a></li>
-                  <li><a href="<?=$kulCek['username'];?>/about" <?php if($current=='about') { ?>class="active" <?php } ?>>Hakkında</a></li>
+                  <li><a href="<?=$kulCek['username'];?>" <?php if($current=='tunel') { ?>class="active" <?php } ?> > Zaman Tüneli </a></li>
+                  <li><a href="<?=$kulCek['username'];?>/about" <?php if($current=='about') { ?>class="active" <?php } ?> >Hakkında </a></li>
               </ul>
               <button class="btn-primary">Takip Et</button>
             </div>

@@ -33,7 +33,6 @@
               </li>
               <li class="dropdown"><a href="messages">Mesajlar &nbsp;<div   class="pull-right"><span id="mesaj"  class="label label-danger">1</span></div></a></li>
               <li class="dropdown"><a href="group">Gruplar</a></li>
-
               <li class="dropdown"><a href="<?=$sesCek['username'] ?>"><img style="width: 30px; height: 30px; float: left; margin-right: 5px;" src="../images/users/user-2.jpg" alt="user" class="img-responsive profile-photo">  <?=$sesCek['name'] ?></a></li>
               
               

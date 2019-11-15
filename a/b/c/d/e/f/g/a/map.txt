@@ -1,0 +1,16 @@
+custom --header2
+custom2--newgroup
+custom3--editgroup
+custom4--groupdetail
+custom5--messages
+custom6--postcreate
+custom 7-profile
+custom8 --newsfeed
+custom9-- grouppostcreate
+custom10 ---editprofile
+custom11 --editsetting
+custom12--editpass
+custom13--editinterest
+custom14--editwork
+custom15--register
+custom16--index
