@@ -38,14 +38,17 @@
               
             </ul>
             <form class="navbar-form navbar-right hidden-sm">
-              <div class="form-group">
+              <div style="float: left;" class="form-group">
                 <i class="icon ion-android-search"></i>
-                <input type="text" class="form-control" placeholder="Arkadaş, fotoğraf, video">
-              </div>
+                <input type="text" id='search' class="form-control" placeholder="Arkadaş, fotoğraf, video">
+               </div><div style='display:none;float: right;' id=loading><img width="20" src='dimg/mini-loader.gif'/></div>
+               <br>
             </form>
+
           </div><!-- /.navbar-collapse -->
-        </div><!-- /.container -->
+        </div><!-- /.container --><center><div style="text-align: center;width: 50%;"  id='result'></div></center>
       </nav>
+
     </header>
 	
 		<script src="a\b\c\d\e\f\g\a\custom.js">
@@ -57,3 +60,32 @@
     <!-- Scripts
     ================================================= -->
 
+<script>$(document).ready(function(){
+       $('#search').focus();
+       $('#search').keyup(function(){
+       $("#loading").show();
+        var search = $('#search').val();
+        if(search.length >2) {
+          $.ajax({
+        
+          type: 'POST',
+          url: 'config/search.php',
+          data: {search:search},
+          success: function(data) {
+        
+          
+            if(!data.error) {
+              $('#result').html(data);
+                $("#loading").hide();
+          }
+        }
+      });
+        
+    }
+        if (search.length < 1) {
+                $('#result').html('');
+            $("#loading").hide();
+        
+      }
+    });
+  });</script>

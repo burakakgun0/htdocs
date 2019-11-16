@@ -138,9 +138,7 @@ $userId=$_SESSION['id'];
       <div class="spinner"></div>
     </div>
     
-	<script src="a\b\c\d\e\f\g\a\custom5.js">
-	
-	</script>
+	<script src="a\b\c\d\e\f\g\a\custom5.js"></script>
 
     <!-- Scripts
     ================================================= -->

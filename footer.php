@@ -13,49 +13,46 @@
               </ul>
             </div>
             <div class="col-md-2 col-sm-2">
-              <h5>For individuals</h5>
+              <h5>Linkler</h5>
               <ul class="footer-links">
-                <li><a href="#">Signup</a></li>
-                <li><a href="#">login</a></li>
-                <li><a href="#">Explore</a></li>
-                <li><a href="#">Finder app</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Language settings</a></li>
+                <li><a href="newsfeed">Haber Akışı</a></li>
+                <li><a href="logout">Çıkış Yap</a></li>
+                <li><a href="#">PlayStore Uygulamamız</a></li>
+                <li><a href="#">iOS Uygulamamız</a></li>
               </ul>
             </div>
             <div class="col-md-2 col-sm-2">
-              <h5>For businesses</h5>
+              <h5>Profil</h5>
               <ul class="footer-links">
-                <li><a href="#">Business signup</a></li>
-                <li><a href="#">Business login</a></li>
-                <li><a href="#">Benefits</a></li>
-                <li><a href="#">Resources</a></li>
-                <li><a href="#">Advertise</a></li>
-                <li><a href="#">Setup</a></li>
+                <li><a href="<?=$sesCek['username'] ?>">Profilim</a></li>
+                <li><a href="mygroup">Gruplarım</a></li>
+                <li><a href="messages">Mesajlarım</a></li>
+                <li><a href="#">Bildirimlerim</a></li>
               </ul>
             </div>
             <div class="col-md-2 col-sm-2">
               <h5>About</h5>
               <ul class="footer-links">
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Contact us</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms</a></li>
-                <li><a href="#">Help</a></li>
+                <li><a href="#">Hakkımızda</a></li>
+                <li><a href="#">S.S.S.</a></li>
+                <li><a href="#">Gizlilik Sözleşmesi</a></li>
+                <li><a href="#">KVKK Sözleşmesi</a></li>
               </ul>
             </div>
             <div class="col-md-3 col-sm-3">
-              <h5>Contact Us</h5>
+              <h5>İletişim</h5>
               <ul class="contact">
-                <li><i class="icon ion-ios-telephone-outline"></i>+1 (234) 222 0754</li>
-                <li><i class="icon ion-ios-email-outline"></i>info@thunder-team.com</li>
-                <li><i class="icon ion-ios-location-outline"></i>228 Park Ave S NY, USA</li>
+                <li><i class="icon ion-ios-telephone-outline"></i>0850 850 85 05</li>
+                <li><i class="icon ion-ios-email-outline"></i>info@kralpenguen.com</li>
+                <li><i class="icon ion-ios-location-outline"></i>Bursa/Türkiye</li>
               </ul>
             </div>
           </div>
       	</div>
       </div>
       <div class="copyright">
-        <p>Thunder Team © 2016. All rights reserved</p>
+        <p>KralPenguen.com © 2019. Tüm Hakları Saklıdır. Code By<a href="https://www.b5yazilim.com" target="_blank"> B5 Yazılım</a></p>
       </div>
 		</footer>
+
+    
