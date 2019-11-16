@@ -37,7 +37,8 @@ $group=$db->query("SELECT * FROM `facegroup`");
                   	<div class="card-info">
                       <img src="<?=$groups['path'] ?>" alt="user" class="profile-photo-lg" />
                       <div class="friend-info">
-                        <a href="#" class="pull-right text-green">Gruptasın</a>
+                        <a  class="pull-right text-green"><?php $gRoupId=$groups['id']; $groupSessionId=$sesCek['id'];  $groupTa=$db->query("SELECT * FROM `facegroup_users` WHERE user_id='$groupSessionId' and group_id='$gRoupId'");
+                    $groupsTa=$groupTa->rowCount(); if($groupsTa!=0) { echo 'Gruptasın'; } else {}  ?></a>
                       	<h5><a href="<?=$groups['seo'] ?>/group" class="profile-link"><?=$groups['name'] ?></a></h5>
                       	<p>Kurucu : <?php $owner=$groups['owner_user_id'];
                               $groupOwn=$db->query("SELECT * FROM `user` WHERE 1");

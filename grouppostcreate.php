@@ -52,12 +52,14 @@ label span input {
 }
 </style>
 
-
+<?php $grupPostSorgu=$db->query("SELECT * FROM `facegroup_users` WHERE group_id='$grupId' and user_id='$kullaniciIdsi'")->rowCount();
+                        if ($grupPostSorgu!=0) {
+                   ?>
 <div class="create-post">
             	<div class="row">
             		<div class="col-md-7 col-sm-7">
                   <div class="form-group">
-                    <img src="images/users/user-1.jpg" alt="" class="profile-photo-md" />
+                    <img src="<?php if($sesCek['path']==null) { echo 'dimg/defaultavatar.png'; } else { echo $sesCek['path']; }  ?>" alt="" class="profile-photo-md" />
                     <textarea name="texts" id="text" cols="30" rows="1" class="form-control" placeholder="Aklında ne var ?"></textarea>
                   </div>
                 </div>
@@ -81,7 +83,7 @@ label span input {
             	</div>
             </div>
 
-               
+       <?php } ?>        
               
 <script src="a\b\c\d\e\f\g\a\custom9.js">
 

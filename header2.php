@@ -33,7 +33,7 @@
               </li>
               <li class="dropdown"><a href="messages">Mesajlar &nbsp;<div   class="pull-right"><span id="mesaj"  class="label label-danger">1</span></div></a></li>
               <li class="dropdown"><a href="group">Gruplar</a></li>
-              <li class="dropdown"><a href="<?=$sesCek['username'] ?>"><img style="width: 30px; height: 30px; float: left; margin-right: 5px;" src="<?=$sesCek['path']; ?>" alt="user" class="img-responsive profile-photo">  <?=$sesCek['name'] ?></a></li>
+              <li class="dropdown"><a href="<?=$sesCek['username'] ?>"><img style="width: 30px; height: 30px; float: left; margin-right: 5px;" src="<?php if($sesCek['path']==null) { echo 'dimg/defaultavatar.png'; } else { echo $sesCek['path']; }  ?>" alt="user" class="img-responsive profile-photo">  <?=$sesCek['name'] ?></a></li>
               
               
             </ul>

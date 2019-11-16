@@ -12,8 +12,8 @@ $usId=$_SESSION['id'];
 	if (isset($_POST)) {
 		$name=$_POST['name'];
 		$description=$_POST['description'];
-		$path='images/users/groupavatardefault.jpg';
-		$bg_path='images/covers/1.jpg';
+		$path='dimg/coverdefault.jpg';
+		$bg_path='dimg/groupavatardefault.png';
 		$seo=seo($_POST['name']);
 
             $varmi=$db->query("SELECT * FROM `facegroup` WHERE name='$name'");

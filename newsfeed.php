@@ -96,14 +96,15 @@
               <?php } ?>
               </ul>
               <?php }  } ?>
-              <div class="post-container">
-                <img src="images/users/user-5.jpg" alt="user" class="profile-photo-md pull-left" />
-                <div class="post-detail">
-                  <div class="user-info">
-                    <?php $postUs=$postcek['user_id']; 
+              <?php $postUs=$postcek['user_id']; 
                             $postUser=$db->query("SELECT * FROM `user` WHERE id='$postUs'");
                             $postUserCek=$postUser->fetch(PDO::FETCH_ASSOC);
                             ?>
+              <div class="post-container">
+                <img src="<?php if($postUserCek['path']==null) {echo 'dimg/defaultavatar.png';} else {echo $postUserCek['path'];}?>" alt="user" class="profile-photo-md pull-left" />
+                <div class="post-detail">
+                  <div class="user-info">
+                    
                     <h5><a href="<?=$postUserCek['username']; ?>" class="profile-link">
                       <?php
                             echo $postUserCek['name'].' '.$postUserCek['surname'];
@@ -197,12 +198,13 @@ echo "Az Önce";
                     $com="SELECT * FROM `post_comments` WHERE post_id='$postId' and is_spam=0 order by id DESC limit 3";
                     $resultt=$db->query($com); 
                     while($comCek=$resultt->fetch(PDO::FETCH_ASSOC)) {?>
-                  <div class="post-comment">
-                    <img src="images/users/user-11.jpg" alt="" class="profile-photo-sm" />
-                    <p><a href="timeline.html" class="profile-link"><?php $usId=$comCek['user_id'];
+                      <?php $usId=$comCek['user_id'];
                                                                     $uS="SELECT * FROM `user` WHERE id='$usId'";
                                                                     $uSs=$db->query($uS); 
-                                                                    $uScek=$uSs->fetch(PDO::FETCH_ASSOC); 
+                                                                    $uScek=$uSs->fetch(PDO::FETCH_ASSOC); ?>
+                  <div class="post-comment">
+                    <img src="<?php if($uScek['path']==null) {echo 'dimg/defaultavatar.png';} else {echo $uScek['path'];}?>" alt="" class="profile-photo-sm" />
+                    <p><a href="<?=$uScek['username'] ?>" class="profile-link"><?php
                                                                     echo $uScek['username'];
                                                                     ?>
                         </a></i><?=$comCek['comment'];?> </p>
@@ -212,12 +214,12 @@ echo "Az Önce";
                 </div>
                 <form class="form" action="" method="" onsubmit="return false">
                   <div style="width:70%; float: left;" class="post-comment">
-                    <img src="images/users/user-1.jpg" alt="" class="profile-photo-sm" />
+                    <img src="<?php if($uSCek['path']==null) {echo 'dimg/defaultavatar.png';} else {echo $uSCek['path'];}?>" alt="" class="profile-photo-sm" />
                     <input id="message<?=$postcek['id']?>" name="comment"  type="text" class="form-control" placeholder="Yorum Yap">
                     <input type="hidden" class="id" id="id" name="id" value="<?=$postcek['id']?>">
                   </div>
                   <div  style="float: right; margin-top: 3%;">
-                    <button type="submit" name="commented" onclick="ref('<?=$postcek['id']?>','<?=$sesCek['username']?>','<?=$postcek['takenCommentCount'];?>')"  id="get" style="width: 80%;" class="btn btn-primary pull-right get"><span style="margin-right: 15px">Paylaş</span></button>
+                    <button type="submit" name="commented" onclick="ref('<?=$postcek['id']?>','<?=$sesCek['username']?>','<?=$postcek['takenCommentCount'];?>','<?php if($sesCek['path']==null) {echo 'dimg/defaultavatar.png';} else {echo $sesCek['path'];}?>')"  id="get" style="width: 80%;" class="btn btn-primary pull-right get"><span style="margin-right: 15px">Paylaş</span></button>
                   </div>
                 </form>
                 </div>

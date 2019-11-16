@@ -15,10 +15,10 @@
            }
           if(data!="No" && data!="Var")
           {
-          alert("Değişiklik başarılı");
+          alert("DeÄŸiÅŸiklik BaÅŸarÄ±lÄ±");
            window.location.href = data+'/group';
           } else if(data=="No") {
-            alert("Başarısız");
+            alert("BaÅŸarÄ±sÄ±z");
           }
           }
           });

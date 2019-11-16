@@ -23,8 +23,15 @@ $groupCek=$group->fetch(PDO::FETCH_ASSOC);
                   <li><a href="<?=$groupCek['seo'];?>/group/about" <?php if(@$current=='about') { ?>class="active" <?php } ?>>Hakkında</a></li>
                 </ul>
                 <ul class="follow-me list-inline">
-                  <!--<li>1,299 kişi takip ediyor</li>
-                  <li><button class="btn-primary">Takip Et</button></li>-->
+                  <!--<li>1,299 kişi takip ediyor</li>-->
+                  <?php $grupId=$groupCek['id'];
+                        $_SESSION['groupid']=$grupId; 
+                        $kullaniciIdsi=$sesCek['id'];
+                        $grupSorgu=$db->query("SELECT * FROM `facegroup_users` WHERE group_id='$grupId' and user_id='$kullaniciIdsi'")->rowCount();
+                        if ($grupSorgu==0) {
+                   ?>
+                  <li><button id="name" onclick="inGroup()" value="<?=$groupCek['name'] ?>" class="btn-primary">Gruba Katıl</button></li>
+                <?php } else {?> <li><button id="name" onclick="outGroup()" value="<?=$groupCek['name'] ?>" class="btn-primary">Gruptan Ayrıl</button></li> <?php } ?>
                   <?php if ($groupCek['owner_user_id']==$sesCek['id']) { ?>
                    <li><a href="<?=$groupCek['seo'];?>/group/settings"> <button class="btn-primary">Grubu Düzenle</button></a></li>
                   <?php } ?>
@@ -46,8 +53,14 @@ $groupCek=$group->fetch(PDO::FETCH_ASSOC);
                   <li><a href="<?=$groupCek['seo'];?>/group/" <?php if($current=='tunel') { ?> class="active" <?php } ?>>Zaman Tüneli</a></li>
                   <li><a href="<?=$groupCek['seo'];?>/group/about" <?php if($current=='about') { ?> class="active" <?php } ?>>Hakkında</a></li>
               </ul>
-              <button class="btn-primary">Gruba Katıl</button>
+              
+            <?php  if ($grupSorgu==0) { ?>
+              <button onclick="inGroup()" value="<?=$groupCek['name'] ?>" class="btn-primary">Gruba Katıl</button>
+               <?php } else { ?> <button onclick="outGroup()" value="<?=$groupCek['name'] ?>" class="btn-primary">Gruptan Ayrıl</button> <?php } ?>
             </div>
           </div><!--Timeline Menu for Small Screens End-->
 
         </div>
+
+
+        <script  type="text/javascript"  src="a\b\c\d\e\f\g\a\custom18.js"></script>

@@ -5,14 +5,14 @@ $kulCek=$kul->fetch(PDO::FETCH_ASSOC);
 
 ?>
 
-<div class="timeline-cover" style="background: url(<?=$kulCek['background_path'] ?>) no-repeat;">
+<div class="timeline-cover" style="background: url(<?php if($kulCek['background_path']==null) { echo 'dimg/coverdefault.jpg'; } else { echo $kulCek['background_path']; }  ?>) no-repeat;">
 
           <!--Timeline Menu for Large Screens-->
           <div class="timeline-nav-bar hidden-sm hidden-xs">
             <div class="row">
               <div class="col-md-3">
                 <div class="profile-info">
-                  <img src="<?=$kulCek['path'] ?>" alt="" class="img-responsive profile-photo" />
+                  <img src="<?php if($kulCek['path']==null) { echo 'dimg/defaultavatar.png'; } else { echo $kulCek['path']; }  ?>" alt="" class="img-responsive profile-photo" />
                   <h3><?=$kulCek['name'].' '.$kulCek['surname']; ?></h3>
                   <p class="text-muted"><?=$kulCek['username'];?></p>
                 </div>
@@ -37,7 +37,7 @@ $kulCek=$kul->fetch(PDO::FETCH_ASSOC);
           <!--Timeline Menu for Small Screens-->
           <div class="navbar-mobile hidden-lg hidden-md">
             <div class="profile-info">
-              <img src="<?=$kulCek['path'] ?>" alt="" class="img-responsive profile-photo" />
+              <img src="<?php if($kulCek['path']==null) { echo 'dimg/defaultavatar.png'; } else { echo $kulCek['path']; }  ?>" alt="" class="img-responsive profile-photo" />
               <h4><?=$kulCek['name'].' '.$kulCek['surname']; ?></h4>
               <p class="text-muted"><?=$kulCek['username'];?></p>
             </div>

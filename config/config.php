@@ -2,7 +2,7 @@
 
 try {
 
-$db=new PDO("mysql:host=localhost;dbname=hayvann;charset=utf8",'root','');
+$db=new PDO("mysql:host=localhost;dbname=hayvan;charset=utf8",'root','');
 
 }
 

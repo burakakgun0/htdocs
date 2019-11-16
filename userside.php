@@ -1,6 +1,6 @@
 <div class="col-md-3 static">
             <div class="profile-card">
-            	<img src="<?=$sesCek['path'] ?>" alt="user" class="profile-photo" />
+            	<img src="<?php if($sesCek['path']==null) { echo 'dimg/defaultavatar.png'; } else { echo $sesCek['path']; }  ?>" alt="user" class="profile-photo" />
             	<h5><a href="<?=$sesCek['username'] ?>" class="text-white"><?=$sesCek['name'].' '.$sesCek['surname']; ?></a></h5>
             	<!--<a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 takipçi</a>-->
             </div><!--profile card ends-->
