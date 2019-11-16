@@ -15,7 +15,22 @@ $sesID=$_SESSION['id'];
 $ses=$db->query("SELECT * FROM `user` WHERE id='$sesID'");
 $sesCek=$ses->fetch(PDO::FETCH_ASSOC);
 
+		$bc=getDatetimeNow();
 
+
+		$facea=$db->prepare("UPDATE `user` SET `last_active`='$bc' WHERE id='$sesID'")->execute();
+		
+					
+				
+
+		
+function getDatetimeNow() {
+    $tz_object = new DateTimeZone('Europe/Istanbul');
+    $datetime = new DateTime();
+    $datetime->setTimezone($tz_object);
+    return $datetime->format('Y\-m\-d\ H:i:s');
+}
+						
 
 ?>
 
