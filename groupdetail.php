@@ -289,7 +289,7 @@ echo "Az Önce";
               </div>
             <?php } ?>
             </div>
-            <?php include 'activity.php'; ?>
+            <?php include 'activity2.php'; ?>
           </div>
         </div>
       </div>
