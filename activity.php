@@ -7,7 +7,7 @@
 include 'config/config.php';
 
 
-$id=$_SESSION['id'];
+$asdf=$kulCek['id'];
 
 $asd=array();
 
@@ -97,7 +97,7 @@ $asd=array();
                                                                                         }
 			}
 
-				$sqlc = "SELECT * FROM `notification` WHERE `etkilenen_user_id`='$id'  order by id desc limit 5";
+				$sqlc = "SELECT * FROM `notification` WHERE `etkilenen_user_id`='$asdf'  order by id desc limit 5";
 	            $pos=$db->query($sqlc);
 	         
 				
