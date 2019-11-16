@@ -296,7 +296,13 @@ echo "Az Önce";
               </div>
             <?php } ?>
             </div>
-            <?php include 'activity.php'; ?>
+			<?php 
+			 if($USid==$_SESSION['id'])
+			{
+            include 'activity.php'; 
+
+			}
+?>
           </div>
         </div>
       </div>
