@@ -1,4 +1,4 @@
-  
+﻿  
           $(document).ready(function(){
           postt = function (text)
           {
@@ -29,7 +29,7 @@ for(var i=0;i<dosyalar.length;i++)
 {
 
 	postPaylas(dosyalar[i]);
-	console.log(dosyalar[i]);
+	
 }
   
  
@@ -40,7 +40,7 @@ for(var i=0;i<dosyalar.length;i++)
  }
  
 } else {
-  alert("Bo� Post");
+  alert("Boş Post Atılamaz");
 }
 }
 
@@ -66,8 +66,8 @@ Upload.prototype.doUpload = function () {
     // add assoc key values, this will be posts values
     formData.append("file", this.file, this.getName());
     formData.append("upload_file", true);
-    console.log(this.file);
-//console.log(formData);
+  
+
 abcd++;
 
 
@@ -91,7 +91,7 @@ abcd++;
             
         },
         error: function (error) {
-             console.log("456");
+             
         },
         async: true,
         data: formData,
@@ -131,9 +131,9 @@ postPaylas = function (e)
     // maby check size or type here with upload.getSize() and upload.getType()
 
     // execute upload
-       console.log("czx");
+     
     upload.doUpload();
-    console.log("asd");
+  
 }
 });
 

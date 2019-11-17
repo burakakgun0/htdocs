@@ -1,4 +1,4 @@
-  $(document).ready(function(){
+﻿  $(document).ready(function(){
                                                 mesajGetir = function (userId)
                                                 {
                                                     var degerler = 'userId='+ userId ;
@@ -13,7 +13,7 @@
 																
                                                                 success:function(data){
 																	abc = JSON.parse(data);
-																	console.log(abc);
+																	
 																			
 																			divEsitle='<div class="tab-pane active" id="contact'+userId+'">        <div class="chat-body" >      <ul id="msg'+userId+'" class="chat-message">	';
 																	for(var i=abc.length-1;i>=0;i--)
@@ -94,14 +94,14 @@
 																			datas+="&deger"+i+"="+dizi[i].gonderenId;
 																		}
 																	}
-																	console.log(datas +" asd");
+																	
 																	   $.ajax({
 																			type: "post",
 																			url: "config/mesajBaslikIcerik.php",
 																			data: datas,
 																			success: function (data) {
 																					yeniDizi = JSON.parse(data);
-																					console.log(yeniDizi + " asd");
+																					
 																						for(var i=dizi.length-1;i>=0;i--)
 																	{
 																		
@@ -177,7 +177,7 @@ objDiv.scrollTop = objDiv.scrollHeight;
 	}
 	
 	window.onload = function(){ 
-    console.log("window.onload"); 
+
 	baslikCek();
 	headermesajGetir();
 	
@@ -201,7 +201,7 @@ function baslikCek()
                                                                 success:function(data){
 																
 																	abc = JSON.parse(data);
-																				console.log(abc);																
+																																			
 																	msg=abc[0].mesaj;
 																		bild=abc[0].bildirim;
 																		$("#bildirimler").html(bild);
@@ -224,7 +224,7 @@ function baslikCek()
                                                                 success:function(data){
 																
 																	abc = JSON.parse(data);
-																	console.log(abc);																
+																																	
 																	for(var i=0;i<abc.length;i++)
 																	{
 																		

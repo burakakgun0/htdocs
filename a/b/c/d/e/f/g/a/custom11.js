@@ -1,4 +1,4 @@
-
+ï»¿
 $(document).ready(function(){
           accChangee = function (takip,bildirimler,mesajlar,etiket,bildirimSes)
           {
@@ -12,7 +12,7 @@ $(document).ready(function(){
           
           if(data=="Okey")
           {
-          alert("Değişiklik başarılı");
+          alert("DeÄŸiÅŸiklik BaÅŸarÄ±lÄ±");
           }
           }
           });

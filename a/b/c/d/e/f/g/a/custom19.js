@@ -1,4 +1,4 @@
-$(document).ready(function(){
+﻿$(document).ready(function(){
        //$('#search').focus();
        $('#search').keyup(function(){
        $("#loading").show();

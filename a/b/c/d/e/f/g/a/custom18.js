@@ -1,4 +1,4 @@
-$(document).ready(function(){
+﻿$(document).ready(function(){
           inGroupp = function (name)
           {
           var degerler ='name='+name;

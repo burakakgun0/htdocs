@@ -1,4 +1,4 @@
-          $(document).ready(function(){
+ï»¿          $(document).ready(function(){
           accChangee = function (name,surname,username,email,erkekmi,kadinmi,phone,sehir,profile_string)
           {
           var degerler ='name='+name+'&surname='+surname+'&acc='+username+'&email='+email+'&erkekmi='+erkekmi+'&kadinmi='+kadinmi+'&phone='+phone+'&sehir='+sehir+'&profile_string='+profile_string;
@@ -11,7 +11,7 @@
           
           if(data=="Okey")
           {
-          alert("Değişiklik başarılı");
+          alert("DeÄŸiÅŸiklik BaÅŸarÄ±lÄ±");
           }
           }
           });

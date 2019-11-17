@@ -1,4 +1,4 @@
-
+ï»¿
 $(document).ready(function(){
           accChangee = function (company,designation,fromdate)
           {
@@ -12,7 +12,7 @@ $(document).ready(function(){
           
           if(data=="Okey")
           {
-          alert("Değişiklik başarılı");
+          alert("DeÄŸiÅŸiklik BaÅŸarÄ±lÄ±");
           }
           }
           });

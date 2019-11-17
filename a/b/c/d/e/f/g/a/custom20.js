@@ -1,4 +1,4 @@
-function msjGonder(id)
+﻿function msjGonder(id)
                         {
                       //var s =mesajAt(id);
                       var a =document.getElementById("message").value;
@@ -14,7 +14,7 @@ function msjGonder(id)
                       mesajCek = function (userId,mesaj)
                       {
                       var degerler = 'userId='+ userId +'&mesaj='+mesaj;
-                      //console.log(degerler);
+                    
                      
                       $.ajax({
                       type: "POST", 
@@ -22,7 +22,7 @@ function msjGonder(id)
                       data : degerler,
 
                       success:function(data){
-                      //console.log(data);
+                 
                       window.location.reload();
                       }
 

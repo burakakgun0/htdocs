@@ -1,4 +1,4 @@
-//Yorumda Form Sýfýrla
+ï»¿//Yorumda Form Sýfýrla
 
  function FormSifirla($form) {
         $form.find('input:text, input:password, input:file, select, textarea').val('');

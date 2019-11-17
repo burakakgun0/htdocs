@@ -1,4 +1,4 @@
-
+ï»¿
 $(document).ready(function(){
           accChangee = function (oldpw,pw1,pw2)
           {
@@ -12,9 +12,9 @@ $(document).ready(function(){
           
           if(data=="Okey")
           {
-          alert("Deðiþiklik baþarýlý");
+          alert("DeÄŸiÅŸiklik BaÅŸarÄ±lÄ±");
           }else if(data=='No') {
-  alert("Þifreniz Yanlýþ");
+  alert("Åžifreniz YalnÄ±ÅŸ");
 }
           }
           });
@@ -30,7 +30,7 @@ $(document).ready(function(){
   
 if(pw1!=pw2)
 {
-  alert("Girilen Þifreler Eþleþmiyor");
+  alert("Girilen Åžifreler EÅŸleÅŸmiyor");
 } 
 else
 {

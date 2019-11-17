@@ -1,4 +1,4 @@
-  $(document).ready(function(){
+ï»¿  $(document).ready(function(){
           register = function (name,surname,pw,email,erkekmi,kadinmi,phone,sehir)
           {
           var degerler ='name='+name+'&surname='+surname+'&pw='+pw+'&email='+email+'&erkekmi='+erkekmi+'&kadinmi='+kadinmi+'&phone='+phone+'&sehir='+sehir;
@@ -11,11 +11,11 @@
           console.log(data);
           if(data=="Hata")
           {
-          alert("Hata oluþtu");
+          alert("Hata oluÅŸtu");
           }
           else if(data=="Hat")
           {
-          alert("Telefon Veya Email ile önceden kayit açýlmýþ");
+          alert("Telefon Veya Email ile Ã¶nceden kayit oluÅŸturulmuÅŸ");
           }
           else if(data=="Okey")
           {

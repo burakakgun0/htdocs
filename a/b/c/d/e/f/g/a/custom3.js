@@ -4,7 +4,7 @@
           groupEdit = function (txt2,txt3)
           {
           var degerler ="desc="+txt2+"&seo="+txt3;
-          console.log(degerler);
+ 
           $.ajax({
           type: "POST", 
           url: "config/editGroup.php", 
@@ -21,9 +21,9 @@
 {
 
   var description=document.getElementById("description").value;
-  console.log(xx);
+
   var seo=xx;
-  console.log(seo);
+
   groupEdit(description,seo);
 
   if (dosyalar.length>0) {  postPaylas(dosyalar[dosyalar.length-1],1); }
@@ -64,7 +64,7 @@ Upload.prototype.doUpload = function () {
     // add assoc key values, this will be posts values
     formData.append("file", this.file, this.getName());
     formData.append("upload_file", true);
-    console.log(this.file);
+ 
 //console.log(formData);
 abcd++;
 
@@ -89,7 +89,7 @@ abcd++;
             
         },
         error: function (error) {
-             console.log("456");
+            
         },
         async: true,
         data: formData,
@@ -107,7 +107,7 @@ Upload.prototype.doUploadd = function () {
     // add assoc key values, this will be posts values
     formData.append("file", this.file, this.getName());
     formData.append("upload_file", true);
-    console.log(this.file);
+   
 //console.log(formData);
 abcd++;
 
@@ -132,7 +132,7 @@ abcd++;
             
         },
         error: function (error) {
-             console.log("456");
+            
         },
         async: true,
         data: formData,
@@ -190,7 +190,7 @@ var loadFile = function(event) {
 
 for(var i=0;i<event.target.files.length;i++)
 {
-console.log(i);
+
 
 dosyalar.push(event.target.files[i]);
 
@@ -201,7 +201,7 @@ var loadFile2 = function(event) {
 
 for(var i=0;i<event.target.files.length;i++)
 {
-console.log(i);
+
 dosyalar2.push(event.target.files[i]);
 
 }

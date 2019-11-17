@@ -1,10 +1,10 @@
-var a=0;
+﻿var a=0;
                   var dosyalar = new Array();
 var loadFile = function(event) {
 
 for(var i=0;i<event.target.files.length;i++)
 {
-console.log(i);
+
 dosyalar.push(event.target.files[i]);
 var c= document.getElementById("resimler").innerHTML;
  //console.log(c);

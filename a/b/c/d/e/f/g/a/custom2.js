@@ -1,15 +1,15 @@
-
+﻿
           $(document).ready(function(){
           createGroupp = function (name,description)
           {
           var degerler ='name='+name+'&description='+description;
-          console.log(degerler);
+       
           $.ajax({
           type: "POST", 
           url: "config/creategroup.php", 
           data : degerler,
           success: function(data) {
-          console.log(data);
+       
            if (data=='Var') {
             alert("Bu isimde bir grup zaten var!");
            }

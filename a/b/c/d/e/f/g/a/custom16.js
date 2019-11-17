@@ -1,4 +1,4 @@
-             // veri sonrasý input temizleme                                     
+ï»¿             // veri sonrasý input temizleme                                     
                                         // ajax yorum
 
                                             $(document).ready(function(){
@@ -18,11 +18,11 @@
 																	console.log(data);
 																if(data=="Hata")
 																{
-																	alert("Hata oluþtu");
+																	alert("Hata oluÅŸtu");
 																}
 																else if(data=="Hat")
 																{
-																	alert("Telefon Veya Email ile önceden kayit açýlmýþ");
+																	alert("Telefon Veya Email ile Ã¶nceden kayit oluÅŸturulmuÅŸ");
 																}
 																else if(data=="Okey")
 																{

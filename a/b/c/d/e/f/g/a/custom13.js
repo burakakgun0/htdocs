@@ -1,4 +1,4 @@
-
+﻿
 $(document).ready(function(){
           accChangee = function (ilgi)
           {
