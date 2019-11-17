@@ -22,12 +22,12 @@
 																		if(userId==abc[i].gonderenId)
 																		{
 																			//console.log("asd");
-																			divEsitle+='<li class="left"> <img src="images/users/user-2.jpg" alt="" class="profile-photo-sm pull-left" /><div class="chat-item"><div class="chat-item-header"> <h5>'+abc[i].mesajAtan+'</h5><small class="text-muted">'+abc[i].nekadaronce+'</small> </div> <p>'+abc[i].mesaj+'</p> </div>	</li>';			
+																			divEsitle+='<li class="left"> <img src="'+abc[i].path+'" alt="" class="profile-photo-sm pull-left" /><div class="chat-item"><div class="chat-item-header"> <h5>'+abc[i].mesajAtan+'</h5><small class="text-muted">'+abc[i].nekadaronce+'</small> </div> <p>'+abc[i].mesaj+'</p> </div>	</li>';			
 																		}																			
 																		else
 																		{
 																			//console.log("dxs");
-																			divEsitle+='<li class="right"> <img src="images/users/user-2.jpg" alt="" class="profile-photo-sm pull-right" /><div class="chat-item"><div class="chat-item-header"> <h5>'+abc[i].mesajAtan+'</h5><small class="text-muted">'+abc[i].nekadaronce+'</small> </div> <p>'+abc[i].mesaj+'</p> </div>	</li>';																	
+																			divEsitle+='<li class="right"> <img src="'+abc[i].path+'" alt="" class="profile-photo-sm pull-right" /><div class="chat-item"><div class="chat-item-header"> <h5>'+abc[i].mesajAtan+'</h5><small class="text-muted">'+abc[i].nekadaronce+'</small> </div> <p>'+abc[i].mesaj+'</p> </div>	</li>';																	
 																	cx=abc[i].gonderenId;
 																		}
 																	}

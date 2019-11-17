@@ -22,6 +22,11 @@ $stmt->execute([$a]);
 
 					while($mesajCek=$sql->fetch(PDO::FETCH_ASSOC))
 					{
+						$asddd=$mesajCek['id'];
+				
+					$sqll="SELECT * FROM `user`  where id='$asddd'";
+                                            $sorgulaaa=$db->query($sqll);
+                                              $userCekkk=$sorgulaaa->fetch(PDO::FETCH_ASSOC);
 				
 			$tarih=$mesajCek['atilma_zamani'];
 			 $zaman= atilmaZamaniHesapla($tarih);
@@ -29,7 +34,8 @@ $stmt->execute([$a]);
 						"mesajAtan"=>$mesajCek['name'], 
 						"mesaj"=>$mesajCek['message'],
 						"nekadaronce"=>$zaman,
-						"gonderenId"=>$mesajCek['id']
+						"gonderenId"=>$mesajCek['id'],
+						"path"=>$userCekkk['path'],
 						); 
    
 						// Use json_encode() function 
