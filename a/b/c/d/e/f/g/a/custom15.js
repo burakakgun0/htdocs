@@ -19,7 +19,7 @@
           }
           else if(data=="Okey")
           {
-          window.location.href = 'newsfeed.php';
+          window.location.href = 'newsfeed';
           }
           }
           });
@@ -81,7 +81,7 @@ else
 																}
 																else if(data=="Okey")
 																{
-																	window.location.href = 'newsfeed.php';
+																	window.location.href = 'newsfeed';
 																}
 
                                                             }

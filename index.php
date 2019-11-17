@@ -35,7 +35,7 @@ include 'config/seo.php'; ?>
 
 if(isset($_SESSION['id']))
 {
-	header("location:newsfeed.php");
+	header("location:newsfeed");
 }
 else
 {
