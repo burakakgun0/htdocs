@@ -12,6 +12,7 @@ include 'config.php';
 			$kadinmi=$_POST['kadinmi'];
 			$phone=$_POST['phone'];
 			$sehir=$_POST['sehir'];
+			$path='dimg/defaultavatar.png';
          $sql="SELECT * FROM `user` WHERE email='$email'  or telefon='$phone'";
 
             $res=$db->query($sql);
@@ -34,7 +35,7 @@ include 'config.php';
 							} 
 				else 		{
 
-				$insert="INSERT INTO `user`(`name`, `surname`, `password`, `email`, `telefon`,`cinsiyet`,`sehir`) VALUES ('$name','$lastname','$pw','$email','$phone','$cinsiyet','$sehir')";
+				$insert="INSERT INTO `user`(`name`, `surname`, `password`, `email`, `telefon`,`cinsiyet`,`sehir`,`path`) VALUES ('$name','$lastname','$pw','$email','$phone','$cinsiyet','$sehir','$path')";
 
                 $resultt=$db->query($insert);
 

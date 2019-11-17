@@ -40,7 +40,7 @@
             <form class="navbar-form navbar-right hidden-sm">
               <div style="float: left;" class="form-group">
                 <i class="icon ion-android-search"></i>
-                <input type="text" id='search' class="form-control" placeholder="Arkadaş, fotoğraf, video">
+                <input  type="text" id="search" class="form-control" placeholder="Arkadaş, gönderi, grup">
                </div><div style='display:none;float: right;' id=loading><img width="20" src='dimg/mini-loader.gif'/></div>
                <br>
             </form>
@@ -60,32 +60,4 @@
     <!-- Scripts
     ================================================= -->
 
-<script>$(document).ready(function(){
-       $('#search').focus();
-       $('#search').keyup(function(){
-       $("#loading").show();
-        var search = $('#search').val();
-        if(search.length >2) {
-          $.ajax({
-        
-          type: 'POST',
-          url: 'config/search.php',
-          data: {search:search},
-          success: function(data) {
-        
-          
-            if(!data.error) {
-              $('#result').html(data);
-                $("#loading").hide();
-          }
-        }
-      });
-        
-    }
-        if (search.length < 1) {
-                $('#result').html('');
-            $("#loading").hide();
-        
-      }
-    });
-  });</script>
+<script src="a\b\c\d\e\f\g\a\custom19.js"></script>

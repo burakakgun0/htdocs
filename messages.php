@@ -45,18 +45,20 @@ $userId=$_SESSION['id'];
               <li class="dropdown"><a href="messages">Mesajlar &nbsp;<div   class="pull-right"><span id="mesaj"  class="label label-danger">1</span></div></a></li>
               <li class="dropdown"><a href="group">Gruplar</a></li>
 
-              <li class="dropdown"><a href="<?=$sesCek['username'] ?>"><img style="width: 30px; height: 30px; float: left; margin-right: 5px;" src="../images/users/user-2.jpg" alt="user" class="img-responsive profile-photo">  <?=$sesCek['name'] ?></a></li>
+              <li class="dropdown"><a href="<?=$sesCek['username'] ?>"><img style="width: 30px; height: 30px; float: left; margin-right: 5px;" src="<?php if($sesCek['path']==null) { echo 'dimg/defaultavatar.png'; } else { echo $sesCek['path']; }  ?>" alt="user" class="img-responsive profile-photo">  <?=$sesCek['name'] ?></a></li>
               
               
             </ul>
             <form class="navbar-form navbar-right hidden-sm">
-              <div class="form-group">
+              <div style="float: left;" class="form-group">
                 <i class="icon ion-android-search"></i>
-                <input type="text" class="form-control" placeholder="Arkadaş, fotoğraf, video">
-              </div>
+                <input type="text" id='search' class="form-control" placeholder="Arkadaş, gönderi, grup">
+               </div><div style='display:none;float: right;' id=loading><img width="20" src='dimg/mini-loader.gif'/></div>
+               <br>
             </form>
+
           </div><!-- /.navbar-collapse -->
-        </div><!-- /.container -->
+        </div><!-- /.container --><center><div style="text-align: center;width: 50%;"  id='result'></div></center>
       </nav>
     </header>
 	
@@ -84,8 +86,12 @@ $userId=$_SESSION['id'];
 
         
             <div class="create-post">
-            	<h4 class="grey">Mesajlar<a href=""><div  class="pull-right"><span class="label label-primary">Mesaj At</span></div></a></h4>
+              
+               
+              </ul>
+            	<h4 class="grey">Mesajlar</h4>
             </div>
+            
 
             <!-- Chat Room
             ================================================= -->
@@ -116,7 +122,7 @@ $userId=$_SESSION['id'];
               </div>
             </div>
           </div>
-										
+									
     			<!-- Newsfeed Common Side Bar Right
           ================================================= -->
     		<?php include 'rightbar.php'; ?>
@@ -139,6 +145,7 @@ $userId=$_SESSION['id'];
     </div>
     
 	<script src="a\b\c\d\e\f\g\a\custom5.js"></script>
+  <script src="a\b\c\d\e\f\g\a\custom19.js"></script>
 
     <!-- Scripts
     ================================================= -->

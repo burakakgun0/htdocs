@@ -10,7 +10,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="logo" /></a>
+            <a class="navbar-brand" href="index"><img src="images/logo.png" alt="logo" /></a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -19,12 +19,7 @@
               <li class="dropdown"><a href="index.php">Anasayfa</a></li>
                <li class="dropdown"><a href="register.php">Kayıt Ol</a></li>
             </ul>
-            <form class="navbar-form navbar-right hidden-sm">
-              <div style="margin-right: 250px" class="form-group">
-                <i class="icon ion-android-search"></i>
-                <input type="text" class="form-control" placeholder="Arkadaş, fotoğraf, video">
-              </div>
-            </form>
+            
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container -->
       </nav>

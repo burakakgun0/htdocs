@@ -116,7 +116,7 @@
                     	<a href="<?=$grpCek['seo']; ?>/group"><span class="following"> <?php echo '<'.' '.$grpCek['name']; ?> </span></a>
                     <?php } ?>
                 </h5>
-                    <p class="text-muted"><?php
+                    <a href="<?=$postcek['link']; ?>/post"><p class="text-muted"><?php
 date_default_timezone_set('Europe/Istanbul');
 $tarih=explode(" ",$postcek['create_time']);//bu ilk kayıt tarihi olsun
 $ilktarih=$tarih[0];
@@ -149,7 +149,7 @@ echo round($dakika)." Dakika Önce";
 elseif ($saniye<=59 && $saniye>=0) {
 echo "Az Önce";
 }
-?></p>
+?></p></a>
                   </div>
                   <div  class="reaction">
                     <div style="float: left;" id="like<?=$postcek['id'];?>">

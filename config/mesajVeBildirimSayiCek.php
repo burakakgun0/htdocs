@@ -7,7 +7,7 @@ $id=$_SESSION['id'];
 
 $asd=array();
 
-				$sqlc = "SELECT * FROM `notification` WHERE `etkilenen_user_id`='$id' and `okundumu`=0";
+				$sqlc = "SELECT * FROM `notification` WHERE `etkilenen_user_id`='$id' and `olusturan_user_id`!='$id' and `okundumu`=0";
 	            $pos=$db->query($sqlc);
 	            $posCek=$pos->fetch(PDO::FETCH_ASSOC);
 				$bildirimSayi=$pos->rowCount();

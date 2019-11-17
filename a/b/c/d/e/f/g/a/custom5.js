@@ -62,7 +62,7 @@
                                                         });
 	
                                                 }
-												//mesaj baslik �ek
+												//mesaj baslik çek
 													   mesajBaslikCek = function ()
                                                 {
                                                     var degerler = '';
@@ -133,8 +133,9 @@
 	var activeDlg=0;
 	
 	 function updateScroll() {
-            var element = document.getElementById("asd");
-            element.scrollTop = element.scrollHeight;
+            var objDiv = $("#asd");
+    	 var h = objDiv.get(0).scrollHeight;
+    	 objDiv.animate({scrollTop: h});
     }
 
 
@@ -149,7 +150,7 @@
 	
 		if(activeDlg!=id)
 		{
-			var z='					    <div class="send-message">                    <div class="input-group" style>                      <input id="to'+id+'" type="text" class="form-control" placeholder="Type your message">                      <span class="input-group-btn">                        <button onClick="msjAt('+id+')" id="go'+id+'" class="btn btn-default" type="button">Send</button>                      </span>                    </div>                  </div>';		
+			var z='<div class="send-message"><div class="input-group" style><input id="to'+id+'" type="text" class="form-control" placeholder="Mesajınızı Giriniz"><span class="input-group-btn"><button onClick="msjAt('+id+')" id="go'+id+'" class="btn btn-default" type="button">Gönder</button></span></div></div>';		
 	
 			document.getElementById("msgbox").innerHTML=z;
 			updateScroll();
@@ -167,6 +168,7 @@
 		var a =document.getElementById("to"+id).value;
 		var s =mesajCek(id,a);
 		var s =mesajGetir(id);
+		 FormSifirla($('.send-message'));//deðerler sýfýrlandý
 			updateScroll();
 		/*
 		var objDiv = document.getElementById("asd");
@@ -261,3 +263,7 @@ function bildirimCe()
 	
 	setInterval(function(){ baslikCek() }, 30000);
 	
+	function FormSifirla($form) {
+        $form.find('input:text, input:password, input:file, select, textarea').val('');
+        $form.find('input:radio, input:checkbox').removeAttr('checked').removeAttr('selected');
+        }

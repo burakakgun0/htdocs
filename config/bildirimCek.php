@@ -7,7 +7,7 @@ $id=$_SESSION['id'];
 
 $asd=array();
 
-				$sqlc = "SELECT * FROM `notification` WHERE `etkilenen_user_id`='$id' and `okundumu`=0 order by id desc";
+				$sqlc = "SELECT * FROM `notification` WHERE `etkilenen_user_id`='$id' and `olusturan_user_id`!='$id' and `okundumu`=0 order by id desc";
 	            $pos=$db->query($sqlc);
 	         
 				

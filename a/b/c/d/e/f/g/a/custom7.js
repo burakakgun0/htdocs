@@ -78,7 +78,7 @@ return a;
         });
         } });
 
-            function ref(id,username,takenCommentCount)
+            function ref(id,username,takenCommentCount,path)
         {
         var tmp = document.getElementById("message"+id).value;
         if (tmp!="")
@@ -86,7 +86,7 @@ return a;
         jqueryfunction (id,tmp);
         takenCommentCount++;
         var div = document.getElementById("yorumlar"+id).innerHTML;
-        var xz = '<div class="post-comment"><img src="images/users/user-11.jpg" alt="" class="profile-photo-sm" /><p><a href="timeline.html" class="profile-link">'+username+' </a></i>'+tmp+'</p></div>';
+        var xz = '<div class="post-comment"><img src="'+path+'" alt="" class="profile-photo-sm" /><p><a href="'+username+'" class="profile-link">'+username+' </a></i>'+tmp+'</p></div>';
         div = xz+div;
         document.getElementById("yorumlar"+id).innerHTML=div;
         var div = document.getElementById("com"+id).innerHTML;

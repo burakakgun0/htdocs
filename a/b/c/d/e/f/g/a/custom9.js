@@ -41,7 +41,7 @@ for(var i=0;i<dosyalar.length;i++)
   window.location.reload();
  }
 } else {
-  alert("Boþ Post");
+  alert("BoÅŸ Post");
 }
 }
 
