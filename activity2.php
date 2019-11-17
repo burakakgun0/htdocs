@@ -1,0 +1,1 @@
+<?php  //activity php den bak  hata vermesin diye kaldırldı?>
