@@ -4,7 +4,7 @@
           postt = function (text,group)
           {
           var degerler ='&text='+text+'&group='+group;
-          console.log(degerler);
+          
           $.ajax({
           type: "POST", 
           url: "config/postText.php", 
@@ -32,7 +32,7 @@ for(var i=0;i<dosyalar.length;i++)
 {
 
 	postPaylas(dosyalar[i]);
-	console.log(dosyalar[i]);
+
 }
   
  if (dosyalar.length>0) {
@@ -67,7 +67,7 @@ Upload.prototype.doUpload = function () {
     // add assoc key values, this will be posts values
     formData.append("file", this.file, this.getName());
     formData.append("upload_file", true);
-    console.log(this.file);
+
 //console.log(formData);
 abcd++;
 
@@ -92,7 +92,7 @@ abcd++;
             
         },
         error: function (error) {
-             console.log("456");
+           
         },
         async: true,
         data: formData,
@@ -143,7 +143,7 @@ var loadFile = function(event) {
 
 for(var i=0;i<event.target.files.length;i++)
 {
-console.log(i);
+
 dosyalar.push(event.target.files[i]);
 var c= document.getElementById("resimler").innerHTML;
  //console.log(c);

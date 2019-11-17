@@ -2,7 +2,7 @@
           accChangee = function (name,surname,username,email,erkekmi,kadinmi,phone,sehir,profile_string)
           {
           var degerler ='name='+name+'&surname='+surname+'&acc='+username+'&email='+email+'&erkekmi='+erkekmi+'&kadinmi='+kadinmi+'&phone='+phone+'&sehir='+sehir+'&profile_string='+profile_string;
-          console.log(degerler);
+       
           $.ajax({
           type: "POST", 
           url: "config/changeAcc.php", 

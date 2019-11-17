@@ -3,7 +3,7 @@ $(document).ready(function(){
           accChangee = function (company,designation,fromdate)
           {
           var degerler ='company='+company+'&designation='+designation+'&fromdate='+fromdate;
-          console.log(degerler);
+         
           $.ajax({
           type: "POST", 
           url: "config/changeAcc.php", 

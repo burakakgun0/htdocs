@@ -3,7 +3,7 @@ $(document).ready(function(){
           accChangee = function (takip,bildirimler,mesajlar,etiket,bildirimSes)
           {
           var degerler ='takip='+takip+'&bildirimler='+bildirimler+'&mesajlar='+mesajlar+'&etiket='+etiket+'&bildirimSes='+bildirimSes;
-          console.log(degerler);
+
           $.ajax({
           type: "POST", 
           url: "config/changeAcc.php", 

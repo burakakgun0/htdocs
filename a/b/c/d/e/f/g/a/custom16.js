@@ -5,7 +5,7 @@
                                                 Likefunction = function (_postId, _userId)
                                                 {
                                                     var degerler = 'id='+ _postId + '&pw='+_userId;
-													console.log(degerler);
+												
                                                                 $.ajax({
 
                                                                 type: "POST", 
@@ -15,7 +15,7 @@
                                                                 data : degerler, 
 
                                                                 success:function(data){
-																	console.log(data);
+																
 																if(data=="Hata")
 																{
 																	alert("Hata oluştu");
@@ -44,8 +44,7 @@ function girisYap()
 	
 	var id=document.getElementById("email").value;
 	var pw=document.getElementById("password").value;
-			console.log(id);
-			console.log(pw);
+			
 	var s= Likefunction(id,pw);
 	
 }

@@ -3,7 +3,7 @@ $(document).ready(function(){
           accChangee = function (ilgi)
           {
           var degerler ='ilgi='+ilgi;
-          console.log(degerler);
+         
           $.ajax({
           type: "POST", 
           url: "config/changeAcc.php", 

@@ -12,7 +12,7 @@
                                                                 success:function(data){
 																
 																	abc = JSON.parse(data);
-																				console.log(abc);																
+																																	
 																	msg=abc[0].mesaj;
 																		bild=abc[0].bildirim;
 																		$("#bildirimler").html(bild);
@@ -35,7 +35,7 @@
                                                                 success:function(data){
 																
 																	abc = JSON.parse(data);
-																	console.log(abc);																
+																																
 																	for(var i=0;i<abc.length;i++)
 																	{
 																		

@@ -60,7 +60,7 @@ else
                                                 Likefunction = function (_postId, _userId)
                                                 {
                                                     var degerler = 'id='+ _postId + '&pw='+_userId;
-													console.log(degerler);
+													
                                                                 $.ajax({
 
                                                                 type: "POST", 
@@ -70,7 +70,7 @@ else
                                                                 data : degerler, 
 
                                                                 success:function(data){
-																	console.log(data);
+																	
 																if(data=="Hata")
 																{
 																	alert("Hata oluþtu");
@@ -99,8 +99,7 @@ function girisYap()
 	
 	var id=document.getElementById("mail").value;
 	var pw=document.getElementById("pw").value;
-			console.log(id);
-			console.log(pw);
+		
 	var s= Likefunction(id,pw);
 	
 }

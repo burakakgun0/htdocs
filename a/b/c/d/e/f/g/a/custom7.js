@@ -28,7 +28,7 @@
         document.getElementById("like"+postId).innerHTML='<a onclick="unlike('+postId+','+userId+')"  class="btn text-green"><i  class="icon ion-thumbsup"></i><span id="lik'+postId+'">'+a+'</span> </a>';
         var d= deger("lik"+postId);
         d++;
-        console.log(d);
+
         document.getElementById("lik"+postId).innerHTML=d;
         }
 
@@ -41,7 +41,7 @@
         url: "config/unlike.php", 
         data : degerler, 
         success:function(cevap){
-        console.log(cevap);
+       
         }
         });
         }
@@ -50,10 +50,10 @@
         unLikefunction(postId,userId);
         var a=   document.getElementById("lik"+postId).innerHTML;
         document.getElementById("like"+postId).innerHTML='<a onclick="like('+postId+','+userId+')"  class="btn text-green"><i  class="icon ion-thumbsup"></i><span id="lik'+postId+'">'+a+'</span> </a>';
-        console.log(postId+userId+username);
+        
         var d= deger("lik"+postId);
         d--;
-        console.log(d);
+       
         document.getElementById("lik"+postId).innerHTML=d;
         }
         
@@ -95,7 +95,7 @@ return a;
         a=document.getElementById("com"+id);
         var d= deger("com"+id);
         d++;
-        console.log(d);
+    
         document.getElementById("com"+id).innerHTML=d;
         }
         }

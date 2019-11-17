@@ -37,7 +37,7 @@ Upload.prototype.doUpload = function () {
     // add assoc key values, this will be posts values
     formData.append("file", this.file, this.getName());
     formData.append("upload_file", true);
-    console.log(this.file);
+  
 //console.log(formData);
 abcd++;
 
@@ -62,7 +62,7 @@ abcd++;
             
         },
         error: function (error) {
-             console.log("456");
+           
         },
         async: true,
         data: formData,
@@ -80,7 +80,7 @@ Upload.prototype.doUploadd = function () {
     // add assoc key values, this will be posts values
     formData.append("file", this.file, this.getName());
     formData.append("upload_file", true);
-    console.log(this.file);
+ 
 //console.log(formData);
 abcd++;
 

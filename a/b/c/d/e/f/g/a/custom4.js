@@ -23,7 +23,7 @@
 
         function like (postId, userId, username) {
         var s= Likefunction(postId,userId);
-        console.log(s +"as");
+
         var a=   document.getElementById("lik"+postId).innerHTML;
         document.getElementById("like"+postId).innerHTML='<a onclick="unlike('+postId+','+userId+')"  class="btn text-green"><i  class="icon ion-thumbsup"></i><span id="lik'+postId+'">'+a+'</span> </a>';
         var d= deger("lik"+postId);
@@ -50,7 +50,7 @@
         unLikefunction(postId,userId);
         var a=   document.getElementById("lik"+postId).innerHTML;
         document.getElementById("like"+postId).innerHTML='<a onclick="like('+postId+','+userId+')"  class="btn text-green"><i  class="icon ion-thumbsup"></i><span id="lik'+postId+'">'+a+'</span> </a>';
-        console.log(postId+userId+username);
+
         var d= deger("lik"+postId);
         d--;
       

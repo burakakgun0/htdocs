@@ -78,9 +78,9 @@
                                                                 success:function(data){
 															
 																	dizi = JSON.parse(data);
-																			console.log(dizi[0].name);
 																			
-																	console.log(dizi[0]);
+																			
+																	
 																	var datas="";
 																	for(var i=0;i<dizi.length;i++)
 																	{

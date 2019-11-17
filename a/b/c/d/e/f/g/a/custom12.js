@@ -3,7 +3,7 @@ $(document).ready(function(){
           accChangee = function (oldpw,pw1,pw2)
           {
           var degerler ='oldpw='+oldpw+'&pw1='+pw1+'&pw2='+pw2;
-          console.log(degerler);
+          
           $.ajax({
           type: "POST", 
           url: "config/changeAcc.php", 

@@ -3,7 +3,7 @@
           postt = function (text)
           {
           var degerler ='&text='+text;
-          console.log(degerler);
+        
           $.ajax({
           type: "POST", 
           url: "config/postText.php", 
