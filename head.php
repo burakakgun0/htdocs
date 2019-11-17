@@ -47,10 +47,10 @@ function getDatetimeNow() {
 	<base href="/">
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="This is social network html5 template available in themeforest......" />
-		<meta name="keywords" content="Social Network, Social Media, Make Friends, Newsfeed, Profile Page" />
+		<meta name="description" content="KralPenguen.com Sosyal Paylaşım Sitesi.Hesap oluştur veya KralPenguen'e giriş yap. Arkadaşlarınla, akrabalarınla ve tanıdığın diğer kişilerle bağlantı kur. Fotoğraf ve videolar paylaş, mesaj at, ürün sat..." />
+		<meta name="keywords" content="kral penguen, kralpenguen, kralpenguen.com, sosyal paylaşım, sosyal paylaşım sitesi, b5 yazılım, hayvanat bahçesi, fotoğraf paylaş, video paylaş, hayvan sat, hayvan satışı, kanatlı, penguen, kral penguen nedir?" />
 		<meta name="robots" content="index, follow" />
-		<title>Sosyal Medya Projesi</title>
+		<title>Kral Penguen | Yeni Nesil Sosyal Paylaşım Sitesi</title>
 
     <!-- Stylesheets
     ================================================= -->
@@ -67,3 +67,29 @@ function getDatetimeNow() {
     <!--Favicon-->
     <link rel="shortcut icon" type="image/png" href="images/fav.png"/>
 	</head>
+
+	<style type="text/css">
+                    @media only screen and (min-width: 621px) {
+                    .bottom {
+                      margin-top: 3.3%;
+                    }
+                  }
+                    @media only screen and (max-width: 620px) {
+                    .bottom {
+                      margin-top: 3.2%;
+                    }
+                  }
+
+                   @media only screen and (max-width: 600px) {
+                    .bottom {
+                      margin-top: 3%;
+                    }
+                  }
+
+                  @media only screen and (max-width: 500px) {
+                    .bottom {
+                      margin-top: -14%;
+                    }
+                  }
+
+                  </style>

@@ -1,4 +1,13 @@
-<div class="col-md-2 static">
+<style type="text/css">
+  @media only screen and (max-width: 770px) {
+  .ac-none {
+    display: none;
+  }
+}
+
+</style>
+
+<div class="col-md-2 static ac-none">
               <div id="sticky-sidebar">
                 <h4 class="grey">Aktivite</h4>
 

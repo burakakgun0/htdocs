@@ -10,10 +10,10 @@ include 'config/seo.php'; ?>
 <head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="This is social network html5 template available in themeforest......" />
-		<meta name="keywords" content="Social Network, Social Media, Make Friends, Newsfeed, Profile Page" />
+		<meta name="description" content="KralPenguen.com Sosyal Paylaşım Sitesi.Hesap oluştur veya KralPenguen'e giriş yap. Arkadaşlarınla, akrabalarınla ve tanıdığın diğer kişilerle bağlantı kur. Fotoğraf ve videolar paylaş, mesaj at, ürün sat..." />
+		<meta name="keywords" content="kral penguen, kralpenguen, kralpenguen.com, sosyal paylaşım, sosyal paylaşım sitesi, b5 yazılım, hayvanat bahçesi, fotoğraf paylaş, video paylaş, hayvan sat, hayvan satışı, kanatlı, penguen, kral penguen nedir?" />
 		<meta name="robots" content="index, follow" />
-		<title>Sosyal Medya Projesi</title>
+		<title>Kral Penguen | Yeni Nesil Sosyal Paylaşım Sitesi</title>
 
     <!-- Stylesheets
     ================================================= -->
@@ -102,7 +102,7 @@ else
     ================================================= -->
 		<section id="features">
 			<div class="container wrapper">
-				<h1 class="section-title slideDown">sosyal medya</h1>
+				<h1 class="section-title slideDown">kral penguen</h1>
 				<div class="row slideUp">
 					<div class="feature-item col-md-2 col-sm-6 col-xs-6 col-md-offset-2">
 						<div class="feature-icon"><i class="icon ion-person-add"></i></div>
@@ -122,7 +122,7 @@ else
 					</div>
 				</div>
 				<h2 class="sub-title">kitlemiz</h2>
-				<div id="incremental-counter" data-value=<?php echo $rows ?>></div>
+				<div id="incremental-counter" data-value='<?php echo $rows ?>'></div>
 				
 				
 			</div>
@@ -187,14 +187,7 @@ else
     </div>
     
 
-<script type="text/javascript" src="a\b\c\d\e\f\g\a\custom16.js">>
-
-                           
-
-                                 
-
-  
-                                        </script>
+<script type="text/javascript" src="a\b\c\d\e\f\g\a\custom16.js"></script>
 
     <!-- Scripts
     ================================================= -->

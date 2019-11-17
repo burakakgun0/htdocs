@@ -1,4 +1,14 @@
-<footer id="footer">
+<style type="text/css">
+  @media only screen and (max-width: 770px) {
+  .ft-none {
+    display: none;
+  }
+}
+
+</style>
+
+
+<footer id="footer" class="ft-none">
       <div class="container">
       	<div class="row">
           <div class="footer-wrapper">

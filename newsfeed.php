@@ -211,14 +211,14 @@ echo "Az Önce";
                   </div>
                 <?php } ?>
                   
-                </div>
+                </div><?php if($postcek['takenCommentCount']>3) {?><div><center><a href="<?=$postcek['link']; ?>/post" style="font-size: 17px;" class="btn-primary" >...</a></center></div><?php } ?>
                 <form class="form" action="" method="" onsubmit="return false">
                   <div style="width:70%; float: left;" class="post-comment">
                     <img src="<?php if($uSCek['path']==null) {echo 'dimg/defaultavatar.png';} else {echo $uSCek['path'];}?>" alt="" class="profile-photo-sm" />
                     <input id="message<?=$postcek['id']?>" name="comment"  type="text" class="form-control" placeholder="Yorum Yap">
                     <input type="hidden" class="id" id="id" name="id" value="<?=$postcek['id']?>">
                   </div>
-                  <div  style="float: right; margin-top: 3%;">
+                  <div class="bottom" style="float: right;">
                     <button type="submit" name="commented" onclick="ref('<?=$postcek['id']?>','<?=$sesCek['username']?>','<?=$postcek['takenCommentCount'];?>','<?php if($sesCek['path']==null) {echo 'dimg/defaultavatar.png';} else {echo $sesCek['path'];}?>')"  id="get" style="width: 80%;" class="btn btn-primary pull-right get"><span style="margin-right: 15px">Paylaş</span></button>
                   </div>
                 </form>
